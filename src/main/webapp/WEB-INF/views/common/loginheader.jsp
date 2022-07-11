@@ -62,8 +62,7 @@
             </div>
         </div>
         <!-- Spinner End -->
-
-        <!-- Header Start -->
+<!-- Header Start -->
         
         <div class="container-fluid bg-dark px-0">
             <div class="row gx-0">
@@ -83,44 +82,6 @@
                                 <i class="fa fa-phone-alt text-primary me-2"></i>
                                 <p class="mb-0">+010 6681 1224</p>
                             </div>
-                        </div>
-                        <div class="col-lg-5 px-5 text-end">
-							<nav class="header navbar navbar-expand-sm navbar-dark">
-						    	<div class="default_width container-fluid ">      							        
-							        <ul class="navbar-nav  justify-content-end">
-							        	<c:if test="${email != null}"> <!-- 고객 로그인 -->
-							        		<li class="nav-item">
-									           <a class="nav-link" href="${pageContext.request.contextPath}/member/memberInfo">내 정보</a>
-									        </li>
-									        <li class="nav-item">
-									           <a class="nav-link" href="${pageContext.request.contextPath}/reservation/reservationList">예약 내역</a>
-									        </li>
-									        <li class="nav-item">
-									           <a class="nav-link" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
-									        </li>
-							        	</c:if>
-							        	<c:if test="${bu_email != null}"> <!-- 사업자 로그인 -->
-							        		<li class="nav-item">
-									           <a class="nav-link" href="${pageContext.request.contextPath}/member/buInfo">사업자 정보</a>
-									        </li>
-							        		<li class="nav-item">
-									            <a class="nav-link" href="${pageContext.request.contextPath}/room/reservation">예약내역</a>
-									        </li>
-									        <li class="nav-item">
-									            <a class="nav-link" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
-									        </li>
-							        	</c:if>
-							          <c:if test="${bu_email == null && email == null}"> <!-- 비로그인 -->
-							          	<li class="nav-item">  
-							            	<a class="nav-link" href="${pageContext.request.contextPath}/member/loginForm">예약내역</a>
-							            </li>
-							            <li class="nav-item">
-							            	<a class="nav-link" href="${pageContext.request.contextPath}/common/loginForm">로그인</a>
-							            </li>
-							          </c:if>
-							        </ul>
-						      </div>
-						    </nav>
                         </div>
                     </div>
                     <nav class="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
