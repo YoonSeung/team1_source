@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hotel.mapper.MemberMapper">
+	
+	<select id="getList" resultType="com.hotel.domain.MemberVO">
+	<![CDATA[
+	select * from mm_info
+	]]>
+	</select>
+	
+	<insert id="insert">
+	insert into mm_info (mm_email, mm_pass, mm_name, mm_gender, mm_phone, regdate, updatedate, Withdrawal)
+	values(#{mm_email}, #{mm_pass}, #{mm_name}, #{mm_gender}, #{mm_phone}, sysdate, sysdate, 'o' )
+	</insert> 
+	
+	<select id="read" resultType="com.hotel.domain.MemberVO">
+		select * from mm_info where mm_email=#{mm_email}
+	</select>
+	
+	
+	<select id="getMm_email" resultType="int">
+		SELECT count(*) 
+ 		FROM mm_info
+        WHERE mm_email = #{mm_email}
+	</select>
+</mapper>
