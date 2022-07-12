@@ -88,7 +88,7 @@
 							<nav class="header navbar navbar-expand-sm navbar-dark">
 						    	<div class="default_width container-fluid ">      							        
 							        <ul class="navbar-nav  justify-content-end">
-							        	<c:if test="${email != null}"> <!-- 고객 로그인 -->
+							        	<c:if test="${mm_email != null}"> <!-- 고객 로그인 -->
 							        		<li class="nav-item">
 									           <a class="nav-link" href="${pageContext.request.contextPath}/member/memberInfo">내 정보</a>
 									        </li>
@@ -132,7 +132,7 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="main" class="nav-item nav-link active">메인</a>
+                                <a href="main" class="nav-item nav-link">메인</a>
                                 <a href="about.html" class="nav-item nav-link">소개</a>
                                 <a href="service.html" class="nav-item nav-link">서비스</a>
                                 <a href="room.html" class="nav-item nav-link">숙소</a>
