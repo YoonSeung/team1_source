@@ -61,8 +61,8 @@ function inputCheck() {
                 <th scope="row">성별</th>
                <td>
                   <select name="mm_gender">
-                     <option value="1">남자</option>
-                     <option value="2">여자</option>
+                     <option value="M">남자</option>
+                     <option value="W">여자</option>
                   </select>
                </td>
               </tr>
