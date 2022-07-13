@@ -12,8 +12,8 @@
 	</select>
 	
 	<insert id="insert">
-	insert into mm_info (mm_email, mm_pass, mm_name, mm_gender, mm_phone, regdate, updatedate, Withdrawal)
-	values(#{mm_email}, #{mm_pass}, #{mm_name}, #{mm_gender}, #{mm_phone}, sysdate, sysdate, 'o' )
+	insert into mm_info(mm_email, mm_pass, mm_name, mm_gender, mm_phone)
+	values(#{mm_email}, #{mm_pass}, #{mm_name}, #{mm_gender}, #{mm_phone})
 	</insert> 
 	
 	<select id="read" resultType="com.hotel.domain.MemberVO">
