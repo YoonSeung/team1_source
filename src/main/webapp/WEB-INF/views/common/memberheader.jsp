@@ -131,7 +131,7 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="main" class="nav-item nav-link">메인</a>
+                                <a href="search/main" class="nav-item nav-link">메인</a>
                                 <a href="about.html" class="nav-item nav-link">소개</a>
                                 <a href="service.html" class="nav-item nav-link">서비스</a>
                                 <a href="room.html" class="nav-item nav-link">숙소</a>
@@ -140,7 +140,7 @@
                                     <div class="dropdown-menu rounded-0 m-0">
                                         <a onclick="location.href='${pageContext.request.contextPath}/search/hotelsearch'" class="dropdown-item">호텔</a>
                                         <a onclick="location.href='${pageContext.request.contextPath}/search/motelsearch'" class="dropdown-item">모텔</a>
-                                        <a onclick="location.href='${pageContext.request.contextPath}/search/rosortsearch'" class="dropdown-item">리조트</a>
+                                        <a onclick="location.href='${pageContext.request.contextPath}/search/resortsearch'" class="dropdown-item">리조트</a>
                                     </div>
                                 </div>
                                 <a href="contact.html" class="nav-item nav-link">QnA</a>

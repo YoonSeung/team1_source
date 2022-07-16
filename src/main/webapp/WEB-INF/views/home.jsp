@@ -6,5 +6,7 @@
 </head>
 <body>
 <% response.sendRedirect(request.getContextPath()+"/search/main"); %>
+ <h2>ddd</h2>
 </body>
 </html>
+
