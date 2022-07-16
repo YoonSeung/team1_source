@@ -5,36 +5,29 @@
 <%@include file="../common/memberheader.jsp" %>
 
 
-
-
-
-
-
         <!-- Room Start -->
-        <form action="${pageContext.request.contextPath}/search/hotelsearch" method="get" name="f">     
-        <div class="container-xxl py-5">
-        
-            <div class="container">
-                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="section-title text-center text-primary text-uppercase">호텔목록</h6>
-                </div>
+<form action="${pageContext.request.contextPath}/search/hotelsearch" method="get" name="f">     
+ 	<div class="container-xxl py-5">
+		<div class="container">
+			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+				<h6 class="section-title text-center text-primary text-uppercase">호텔목록</h6>
+    		</div>
                 
 			<div class="container">
 				<table class="table" style="width: 75%; margin:10px auto; margin-top: 50px;">
-		    		<tbody>
-		    			<c:forEach var="hotel" items="${hotel}">
-		    			
-		         			<tr style="width: 100% height: 100%">
-		           					<td>
-			           					<div class="panel-body">			
-											<div class='uploadResult2'>
-											<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
-	            								class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
-	            								alt="Sample photo" >
-											</div>
-					
-										</div><br>
-									</td>
+					<tbody>
+						<c:forEach var="hotel" items="${hotel}">
+							<tr style="width: 100% height: 100%">
+								<td>
+								<div class="panel-body">			
+									<div class='uploadResult2'>
+										<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+	            						class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+	            						alt="Sample photo" >
+									</div>					
+								</div>
+								<br>
+								</td>
 		           				
 		           				<td class= "roomlist_box" style="width: 40%">
 		            				<div>
@@ -47,12 +40,12 @@
 										<h4><fmt:formatNumber value="${hotel.ro_price}" pattern="#,###" />원</h4>
 									</div>
 								</td>
-							</tr>
-							
+							</tr>							
 			      		</c:forEach>
 					</tbody>
 				</table>
 			</div>
+			
 		</div>
 	</div>    
 </form>
