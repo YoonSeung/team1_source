@@ -49,5 +49,6 @@ public class SearchController {
 	      List<Room_infoVO> resort = service.getresortList();
 	      model.addAttribute("resort", resort);
 	   }
+	
 	 
 }
