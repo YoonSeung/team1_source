@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%@include file="../common/loginheader.jsp" %>
+<%@include file="../common/memberheader.jsp" %>
 
 <body>
 
@@ -19,7 +20,7 @@
 			<div id="member-login" class="container tab-pane active" >
 				<form action="${pageContext.request.contextPath}/member/loginPro" method="post" style="margin: auto; width: 500px;">
 
-					<input type="text" name="email" class="form-control form-control-lg mt-3" placeholder="이메일" autocomplete="username"> 
+					<input type="email" name="email" class="form-control form-control-lg mt-3" placeholder="이메일" autocomplete="username"> 
 					<input type="password" name="password" class="form-control form-control-lg mt-1" placeholder="비밀번호" autocomplete="current-password"> 					
 					<hr>
 					<div class="row mt-3">

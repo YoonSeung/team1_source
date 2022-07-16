@@ -384,3 +384,19 @@
     padding-right: 0;
     border-right: none;
 }
+
+/* roomlist css */
+.roomlist_box {
+   position: relative;
+}
+
+.roomlist_bottom {
+   position: absolute;
+   bottom: 50px;
+   left: 60%;
+}
+
+.roomlist_main-img {
+   width: 80%;
+   height: 250px;
+}

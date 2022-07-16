@@ -20,15 +20,22 @@
 	opacity: 0.6;
 }
 
+	.id_input_re_1{
+		color : green;
+		display : none;
+	}
+	/* 중복아이디 존재하는 경우 */
+	.id_input_re_2{
+		color : red;
+		display : none;
+	}
+
 </style>
 
 <head>
     <meta charset="utf-8">
     <title>Team1 숙박예약관리시스템</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <!-- Favicon -->
-    <link href="/resources/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,11 +51,14 @@
     <link href="/resources/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="/resources/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
+   <!-- Template Stylesheet -->
+    <link href="/resources/css/style.css" rel="stylesheet">
+    
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="/resources/css/style.css" rel="stylesheet">
+
+ 
 </head>
 
 <body>

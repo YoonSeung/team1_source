@@ -1,8 +1,10 @@
 package com.hotel.service;
 
 
-import com.hotel.domain.MemberVO;
+import java.util.List;
 
+import com.hotel.domain.Co_infoVO;
+import com.hotel.domain.MemberVO;
 
 public interface MemberService {
 	
