@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
-<%@include file="../common/loginheader.jsp" %>
+<%@include file="../common/memberheader.jsp" %>
 
 <body>
 
