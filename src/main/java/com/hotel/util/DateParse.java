@@ -12,15 +12,15 @@ public class DateParse {
 	private static SimpleDateFormat strFormat = new SimpleDateFormat("yyyyMMdd");
 	private static DateTimeFormatter localDateFormat = DateTimeFormatter.ofPattern("yyyyMMdd");
 	
-	// ¿ÜºÎ¿¡¼­ °´Ã¼ »ı¼º ±İÁö
+	
 	private DateParse() {}
 	
-	// yyyy-MM-dd -> yyyyMMdd	=>	DB¿¡ ³Ö±â À§ÇØ »ç¿ë
+	
 	public static String dateToStr(String date) {
 		return date.replaceAll("-", "");
 	}
 	
-	// yyyyMMdd -> yyyy-MM-dd	=>	input date value·Î ³Ö±â À§ÇØ »ç¿ë
+	
 	public static String strToDate(String str) {
 		Date date;
 		try {
@@ -33,22 +33,22 @@ public class DateParse {
 		return null;
 	}
 	
-	// getTodayPlus(int) ÆÄ¶ó¹ÌÅÍ+ 	0 ³ÖÀ¸¸é ¿À´­, ?˜¤?Š˜, 1 ³ÖÀ¸¸é ³»ÀÏ
+	
 	public static String getTodayPlus(int plus) {
-		LocalDate now = LocalDate.now(); 	// ÇöÀç½Ã°£
-		now = now.plusDays(plus);			// ÇöÀç½Ã°£ + "plus"ÀÏ
-		return now.format(localDateFormat);	// yyyyMMddÆ÷¸ÅÆÃ
+		LocalDate now = LocalDate.now(); 	
+		now = now.plusDays(plus);			
+		return now.format(localDateFormat);	
 	}
 	
-	//³¯Â¥´õÇÏ±â
+	
 	public static String datePlus(String date, int plus) {
 		if(date.contains("-")) date = DateParse.dateToStr(date);
 		LocalDate localDate = LocalDate.parse(date, DateTimeFormatter.BASIC_ISO_DATE);
 		return localDate.plusDays(plus).format(DateTimeFormatter.BASIC_ISO_DATE);
-		// return yyyyMMdd
+		
 	}
 	
-	// ³¯Â¥ Â÷ÀÌ °è»ê end - start
+	
 	public static int dateDif(String start, String end) {
 		if(start.contains("-") || end.contains("-")) {
 			start = DateParse.dateToStr(start);
@@ -59,7 +59,7 @@ public class DateParse {
 			Date startDate = strFormat.parse(start);
 			Date endDate = strFormat.parse(end);
 			int dif = (int) ((endDate.getTime()-startDate.getTime()) / (24*60*60*1000));
-			System.out.println("³¯Â¥ Â÷ÀÌ: "+dif);
+			System.out.println("ë‚ ì§œì°¨ì´: "+dif);
 			return dif;
 			
 		} catch (ParseException e) {

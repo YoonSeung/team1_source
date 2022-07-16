@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reservationList.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/memberInfo.css">
 
+
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <style type="text/css">
@@ -20,6 +21,7 @@
 	opacity: 0.6;
 }
 
+
 </style>
 
 <head>
@@ -28,9 +30,6 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-
-    <!-- Favicon -->
-    <link href="/resources/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -137,11 +136,11 @@
                                 <a href="service.html" class="nav-item nav-link">서비스</a>
                                 <a href="room.html" class="nav-item nav-link">숙소</a>
                                 <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">페이지나눔</a>
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">숙소카테고리</a>
                                     <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.html" class="dropdown-item">예약</a>
-                                        <a href="team.html" class="dropdown-item">추천여행지</a>
-                                        <a href="testimonial.html" class="dropdown-item">~다른내용</a>
+                                        <a onclick="location.href='${pageContext.request.contextPath}/search/hotelsearch'" class="dropdown-item">호텔</a>
+                                        <a onclick="location.href='${pageContext.request.contextPath}/search/motelsearch'" class="dropdown-item">모텔</a>
+                                        <a onclick="location.href='${pageContext.request.contextPath}/search/rosortsearch'" class="dropdown-item">리조트</a>
                                     </div>
                                 </div>
                                 <a href="contact.html" class="nav-item nav-link">QnA</a>

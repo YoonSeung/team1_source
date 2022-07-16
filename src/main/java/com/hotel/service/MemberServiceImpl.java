@@ -1,8 +1,11 @@
 package com.hotel.service;
 
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import com.hotel.domain.Co_infoVO;
 import com.hotel.domain.MemberVO;
 import com.hotel.mapper.MemberMapper;
 
