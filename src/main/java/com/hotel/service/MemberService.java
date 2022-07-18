@@ -10,7 +10,6 @@ public interface MemberService {
 	
 
 	public void signupForm(MemberVO mVo);
-	public int getMm_email(String mm_email);
-
+	public int idCheck(String mm_email);
 
 }

@@ -6,9 +6,9 @@
 
 <body>
 
-	<div class="login_form_width" style="padding-top:100px; margin-bottom: 100px">
+	<div class="login_form_width" style="padding-top:100px; margin-bottom: 100px;" >
 		<!-- Nav tabs -->
-		<ul class="nav nav-tabs nav-justified mt-3" role="tablist" style="width:312px; margin:0 auto;">
+		<ul class="nav nav-tabs nav-justified mt-3" role="tablist" style="width:312px; margin:0 auto;" >
 			<li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" style="color:black;" href="#member-login">고객 로그인</a></li>
 			<li class="nav-item"><a class="nav-link" data-bs-toggle="tab" style="color:black;" href="#business-login">사업자 로그인</a></li>
 		</ul>
@@ -20,15 +20,15 @@
 			<div id="member-login" class="container tab-pane active" >
 				<form action="${pageContext.request.contextPath}/member/loginPro" method="post" style="margin: auto; width: 500px;">
 
-					<input type="email" name="email" class="form-control form-control-lg mt-3" placeholder="이메일" autocomplete="username"> 
-					<input type="password" name="password" class="form-control form-control-lg mt-1" placeholder="비밀번호" autocomplete="current-password"> 					
+					<input type="email" name="mm_email" class="form-control form-control-lg mt-3" placeholder="이메일" autocomplete="username"> 
+					<input type="password" name="mm_pass" class="form-control form-control-lg mt-1" placeholder="비밀번호" autocomplete="current-password">					
 					<hr>
 					<div class="row mt-3">
 						<div class="col-sm-6" style="text-align: center;">
-							<a class="small_text non_deco" href="">회원 로그인</a>
+							<input type="submit" class="btn btn-primary" value="로그인">
 						</div>
 						<div class="col-sm-6" style="text-align: center;">
-							<a class="small_text non_deco" href="${pageContext.request.contextPath}/member/signupForm">회원가입</a>
+							<a class="btn btn-primary" href="${pageContext.request.contextPath}/member/signupForm">회원가입</a>
 						</div>
 					</div>
 				</form>
@@ -44,10 +44,10 @@
 					<hr>
 					<div class="row mt-3">
 						<div class="col-sm-6" style="text-align: center;">
-							<a class="small_text non_deco" href="">사업자 로그인</a>
+							<input type="submit" class="btn btn-primary" value="사업자 로그인">
 						</div>
 						<div class="col-sm-6" style="text-align: center;">
-							<a class="small_text non_deco" href="${pageContext.request.contextPath}/member/buSignupForm">사업자 회원가입</a>
+							<a class="btn btn-primary" href="${pageContext.request.contextPath}/member/buSignupForm">사업자 회원가입</a>
 						</div>
 					</div>
 				</form>

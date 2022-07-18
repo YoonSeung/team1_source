@@ -21,7 +21,7 @@
 	</select>
 	
 	
-	<select id="getMm_email" resultType="int">
+	<select id="idCheck" resultType="int">
 		SELECT count(*) 
  		FROM mm_info
         WHERE mm_email = #{mm_email}
