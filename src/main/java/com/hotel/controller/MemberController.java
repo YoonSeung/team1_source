@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -33,7 +34,7 @@ public class MemberController{
 	public String register(MemberVO mVo, RedirectAttributes rttr) {
 		log.info("signupForm:" + mVo);
 		
-		int checkid = service.getMm_email(mVo.getMm_email());
+		int checkid = service.idCheck(mVo.getMm_email());
 		if(checkid>0) {
 			rttr.addFlashAttribute("result","exit");
 		}else {
@@ -44,6 +45,17 @@ public class MemberController{
 		return "redirect:/common/loginForm";
 	}
 	
+	@RequestMapping(value = "/checkSignup", method = RequestMethod.POST)	
+	public @ResponseBody String AjaxView(@RequestParam("mm_email") String mm_email){		
+		String str = "";		
+		int idcheck = service.idCheck(mm_email);		
+		if(idcheck==1){ //이미 존재하는 계정			
+			str = "NO";			
+			}else{	//사용 가능한 계정			
+				str = "YES";			
+				}		
+		return str;	
+		}
 
 }
 

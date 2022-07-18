@@ -18,6 +18,7 @@ import lombok.extern.log4j.Log4j;
 public class MemberServiceImpl implements MemberService {
 
 	private MemberMapper mapper;
+	
 	@Override
 	public void signupForm(MemberVO mVo) {
 		// TODO Auto-generated method stub
@@ -25,12 +26,12 @@ public class MemberServiceImpl implements MemberService {
 		mapper.insert(mVo);
 
 	}
-	
+
 	@Override
-	public int getMm_email(String mm_email) {
-		log.info("check mm_email");
-		
-		return mapper.getMm_email(mm_email);
+	public int idCheck(String mm_email) {
+		// TODO Auto-generated method stub
+		return mapper.idCheck(mm_email);
 	}
+	
 
 }

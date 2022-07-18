@@ -111,10 +111,10 @@
 							        	</c:if>
 							          <c:if test="${bu_email == null && email == null}"> <!-- 비로그인 -->
 							          	<li class="nav-item">  
-							            	<a class="nav-link" href="${pageContext.request.contextPath}/member/loginForm">예약내역</a>
+							            	<a class="btn btn-dark" href="${pageContext.request.contextPath}/member/signupForm">회원가입</a>
 							            </li>
 							            <li class="nav-item">
-							            	<a class="nav-link" href="${pageContext.request.contextPath}/common/loginForm">로그인</a>
+							            	<a class="btn btn-primary" href="${pageContext.request.contextPath}/common/loginForm">로그인</a>
 							            </li>
 							          </c:if>
 							        </ul>
