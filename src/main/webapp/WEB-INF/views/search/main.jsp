@@ -57,9 +57,30 @@
             </div>
         </div>
         <!-- Carousel End -->
-
+		<br>
+		<br>
+		<br>
+		
           <!-- Booking Start -->
         <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
+        <form action="${pageContext.request.contextPath}/search/search" name="f" method="get">
+        <div class=main_twice_box>
+					<!-- 숙소 종류 선택 탭 -->
+					<ul class="nav nav-tabs nav-justified"  data-toggle="tab-hover" >
+						<li class="nav-item">
+							<a class="nav-link active" data-bs-toggle="tab" style="background: white; color:black; cursor: pointer" onclick="document.getElementById('bu_id').value='1'">호텔</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" style="color: black; cursor: pointer" onclick="document.getElementById('bu_id').value='2'">모텔</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" style="color: black; cursor: pointer" onclick="document.getElementById('bu_id').value='3'">펜션</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" data-bs-toggle="tab" style="color: black; cursor: pointer" onclick="document.getElementById('bu_id').value='4'">리조트</a>
+						</li>
+					</ul>
+					<!-- 숙소 종류 선택 탭 -->
             <div class="container">
                 <div class="bg-white shadow" style="padding: 35px;">
                     <div class="row g-2">
@@ -95,6 +116,8 @@
                     </div>
                 </div>
             </div>
+            </div>
+            </form>
         </div>
         <!-- Booking End -->
 					

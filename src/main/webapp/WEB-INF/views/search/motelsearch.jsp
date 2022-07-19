@@ -41,7 +41,7 @@
 									</div>
 									<div class="roomlist_bottom">
 										<h4><fmt:formatNumber value="${motel.ro_price}" pattern="#,###" />원</h4>
-										<input type="submit" class="reserve_room_btn default_btn medium_text" value="예약">
+										 <input type="submit" class="btn btn-primary" value="예약">
 									</div>
 								</td>
 							</tr>

@@ -27,9 +27,14 @@ public class SearchController {
 
 	@GetMapping("/main")
 	public void list(Model model) {
+		model.addAttribute("today", DateParse.strToDate(DateParse.getTodayPlus(0)));
+	    model.addAttribute("tomorrow", DateParse.strToDate(DateParse.getTodayPlus(1)));
 		log.info("main");
 		model.addAttribute("main");
 	}
+	
+//	@GetMapping("search")
+//	public 
 	
 	
 	@GetMapping("hotelsearch")
