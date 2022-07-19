@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hotel.mapper.BusinessMapper">
+	
+	<select id="selectAllHotel" resultType="com.hotel.domain.BusinessVO">
+		select *
+		from co_info
+		ORDER BY CO_CODE DESC
+	</select>
+	
+	
+	<select id="selectProductByCode" resultType="com.hotel.domain.BusinessVO">
+ 		SELECT * from co_info WHERE CO_CODE=#{co_code}
+ 	</select>
+ 		
+	<insert id="insertHotel">
+	<selectKey keyProperty="co_code" order="BEFORE" resultType="Long">
+ 			select pic_seq.nextval from dual
+ 		</selectKey>
+ 		insert into co_info(co_code,co_title, co_type, area_code3, co_name, co_number)
+ 		values(CO_INFO_SEQ.nextval, #{co_title}, #{co_type}, #{area_code3}, #{co_name}, #{co_number})
+ 	</insert>
+ 	
+ 	<update id="updateProduct">
+ 		update co_info
+ 			set co_title=#{co_title}, co_type=#{co_type}, area_code3=#{area_code3}, co_name=#{co_name}, co_number=#{co_number}
+ 		WHERE 
+ 			co_code=#{co_code}
+ 	</update>
+ 	
+ 	<delete id="deleteHotel">
+	delete from co_info where co_code=#{co_code} 
+ 	</delete>
+</mapper>
