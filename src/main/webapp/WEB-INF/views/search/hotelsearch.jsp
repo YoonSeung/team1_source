@@ -38,6 +38,7 @@
 									</div>
 									<div class="roomlist_bottom">
 										<h4><fmt:formatNumber value="${hotel.ro_price}" pattern="#,###" />원</h4>
+										 <input type="submit" class="btn btn-primary" value="예약">
 									</div>
 								</td>
 							</tr>							

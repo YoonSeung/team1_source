@@ -3,7 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@include file="../common/memberheader.jsp" %>
-
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=35d71e137b481a1c8d8befd339cf5e29&libraries=services"></script>
+<script src="${pageContext.request.contextPath}/resources/js/dateCheck.js"></script>
 
 
         <!-- Room Start -->
@@ -41,6 +42,7 @@
 									</div>
 									<div class="roomlist_bottom">
 										<h4><fmt:formatNumber value="${resort.ro_price}" pattern="#,###" />원</h4>
+										<input type="submit" class="reserve_room_btn default_btn medium_text" value="예약">
 									</div>
 								</td>
 							</tr>
