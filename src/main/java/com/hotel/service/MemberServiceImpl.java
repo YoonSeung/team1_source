@@ -32,6 +32,20 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return mapper.idCheck(mm_email);
 	}
+
+	@Override
+	public MemberVO selectMemberOne(String mm_email) {
+		// TODO Auto-generated method stub
+		return mapper.selectMemberOne(mm_email);
+	}
+
+	@Override
+	public MemberVO getSelectOne(MemberVO mVo) {
+		// TODO Auto-generated method stub
+		return mapper.getSelectOne(mVo);
+	}
+	
+	
 	
 
 }

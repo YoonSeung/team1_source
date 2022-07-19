@@ -18,7 +18,7 @@
 			
 			<!-- 고객 로그인 폼 -->
 			<div id="member-login" class="container tab-pane active" >
-				<form action="${pageContext.request.contextPath}/member/loginPro" method="post" style="margin: auto; width: 500px;">
+				<form name="loginForm" action="loginForm" method="post" style="margin: auto; width: 500px;">
 
 					<input type="email" name="mm_email" class="form-control form-control-lg mt-3" placeholder="이메일" autocomplete="username"> 
 					<input type="password" name="mm_pass" class="form-control form-control-lg mt-1" placeholder="비밀번호" autocomplete="current-password">					

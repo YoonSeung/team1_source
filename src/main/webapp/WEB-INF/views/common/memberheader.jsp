@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="row gx-0 bg-white d-none d-lg-flex">
-                        <div class="col-lg-7 px-5 text-start">
+                        <div class="col-lg-6 px-5 text-start">
                             <div class="h-100 d-inline-flex align-items-center py-2 me-4">
                                 <i class="fa fa-envelope text-primary me-2"></i>
                                 <p class="mb-0">safy1591@naver.com</p>
@@ -83,40 +83,34 @@
                                 <p class="mb-0">+010 6681 1224</p>
                             </div>
                         </div>
-                        <div class="col-lg-5 px-5 text-end">
+                        <div class="col-lg-6">
 							<nav class="header navbar navbar-expand-sm navbar-dark">
 						    	<div class="default_width container-fluid ">      							        
-							        <ul class="navbar-nav  justify-content-end">
-							        	<c:if test="${mm_email != null}"> <!-- 고객 로그인 -->
-							        		<li class="nav-item">
-									           <a class="nav-link" href="${pageContext.request.contextPath}/member/memberInfo">내 정보</a>
-									        </li>
-									        <li class="nav-item">
-									           <a class="nav-link" href="${pageContext.request.contextPath}/reservation/reservationList">예약 내역</a>
-									        </li>
-									        <li class="nav-item">
-									           <a class="nav-link" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
-									        </li>
-							        	</c:if>
-							        	<c:if test="${bu_email != null}"> <!-- 사업자 로그인 -->
-							        		<li class="nav-item">
-									           <a class="nav-link" href="${pageContext.request.contextPath}/member/buInfo">사업자 정보</a>
-									        </li>
-							        		<li class="nav-item">
-									            <a class="nav-link" href="${pageContext.request.contextPath}/room/reservation">예약내역</a>
-									        </li>
-									        <li class="nav-item">
-									            <a class="nav-link" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
-									        </li>
-							        	</c:if>
-							          <c:if test="${bu_email == null && email == null}"> <!-- 비로그인 -->
-							          	<li class="nav-item">  
-							            	<a class="btn btn-dark" href="${pageContext.request.contextPath}/member/signupForm">회원가입</a>
-							            </li>
-							            <li class="nav-item">
-							            	<a class="btn btn-primary" href="${pageContext.request.contextPath}/common/loginForm">로그인</a>
-							            </li>
-							          </c:if>
+							        <ul class="nav justify-content-end">
+							        	<c:choose>
+											<c:when test="${not empty memberVO}">
+												<li class="nav-item" style= "text-align:center" >
+												<a class="btn btn-succes">${memberVO.mm_name }님 환영합니다.</a>
+										        </li>
+												<li class="nav-item">
+										           <a class="btn btn-dark" href="${pageContext.request.contextPath}/member/memberInfo">내 정보</a>
+										        </li>
+										        <li class="nav-item">
+										           <a class="btn btn-primary" href="${pageContext.request.contextPath}/reservation/reservationList">예약 내역</a>
+										        </li>
+										        <li class="nav-item">
+										           <a class="btn btn-dark" href="${pageContext.request.contextPath}/common/logout">로그아웃</a>
+										        </li>
+											</c:when>
+											<c:otherwise>
+												<li class="nav-item">  
+								            		<a class="btn btn-dark " href="${pageContext.request.contextPath}/member/signupForm">회원가입</a>
+								            	</li>
+								            	<li class="nav-item">
+								            		<a class=" btn btn-primary " href="${pageContext.request.contextPath}/common/loginForm">로그인</a>
+								            	</li>
+											</c:otherwise>
+											</c:choose>							        						     
 							        </ul>
 						      </div>
 						    </nav>
