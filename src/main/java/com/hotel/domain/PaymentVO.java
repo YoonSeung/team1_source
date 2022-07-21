@@ -3,8 +3,10 @@ package com.hotel.domain;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 public class PaymentVO {
 	private String pay_code;
 	private String bo_code;

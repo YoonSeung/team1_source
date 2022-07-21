@@ -5,11 +5,9 @@ import lombok.ToString;
 
 @Data
 @ToString
-public class AttachFileDTO {
-
+public class PicFileDTO {
 	private String fileName;
 	private String uploadPath;
 	private String uuid;
 	private boolean image;
-
 }

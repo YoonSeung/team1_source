@@ -3,8 +3,10 @@ package com.hotel.domain;
 import java.util.Date;
 
 import lombok.Data;
+import lombok.ToString;
 
 @Data
+@ToString
 public class BookingVO {
 	private String bo_code;
 	private String mm_email;
