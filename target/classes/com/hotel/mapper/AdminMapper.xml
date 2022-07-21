@@ -4,7 +4,47 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.hotel.mapper.AdminMapper">
-	<select id="read" resultType="com.hotel.domain.AdminVO">
-		select * from "admin_info" where "ad_id"=#{ad_id}
+	<!-- 로그인 -->
+	<select id="ad_read" resultType="com.hotel.domain.AdminVO">
+		<![CDATA[
+			select * from admin_info where ad_id=#{ad_id}
+		]]>
+	</select>
+	
+	<!-- 매출 관리 -->
+	<resultMap type="com.hotel.domain.BookingVO" id="bookingMap">
+		<result property="bo_code" column="bo_code" />
+		<result property="checkin" column="checkin" />
+		<collection property="payment" resultMap="paymentMap" />
+	</resultMap>
+	
+	<resultMap type="com.hotel.domain.PaymentVO" id="paymentMap">
+		<result property="bo_code" column="bo_code" />
+		<result property="pay_price" column="pay_price" />
+	</resultMap>
+	
+	<select id="monthlySales" resultMap="bookingMap">
+		<![CDATA[
+			select booking.bo_code, booking.checkin, payment.pay_price
+			from bo_info booking left outer join pay_info payment on booking.bo_code=payment.bo_code
+			where booking.checkin like #{month}||'%'
+		]]>
+	</select>
+	
+	<!-- 고객 관리 -->
+	<select id="mm_list" resultType="com.hotel.domain.MemberVO">
+		<![CDATA[
+			select * from mm_info order by regdate desc
+		]]>
+	</select>
+	
+	<delete id="mm_delete">
+		delete from mm_info where mm_email=#{mm_email}
+	</delete>
+	
+	<select id="mm_count" resultType="int">
+		<![CDATA[
+			select count(*) from mm_info
+		]]>
 	</select>
 </mapper>

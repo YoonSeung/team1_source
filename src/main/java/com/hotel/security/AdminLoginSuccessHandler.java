@@ -31,7 +31,7 @@ public class AdminLoginSuccessHandler implements AuthenticationSuccessHandler {
 		log.warn("ROLE NAMES : " + roleNames);
 		
 		if(roleNames.toString().contains("ADMIN")) {
-			response.sendRedirect("/sample/admin");
+			response.sendRedirect("/admin/dailySales");
 			return;
 		}
 		

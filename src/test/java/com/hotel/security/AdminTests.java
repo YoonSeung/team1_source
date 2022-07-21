@@ -31,8 +31,8 @@ public class AdminTests {
 	
 	@Test
 	public void testInsertAdmin() {
-		String sql = "insert into \"admin_info\"(\"ad_id\", \"code2\", \"ad_pass\", \"ad_name\", \"regdate\", \"enabled\")"
-				+ "values(?, ?, ?, ?, sysdate, '1')";
+		String sql = "insert into admin_info(ad_id, code2, ad_pass, ad_name, regdate, enabled)"
+				+ "values(?, ?, ?, ?, sysdate, 'o')";
 		
 		for(int i=0; i<3; i++) {
 			Connection con = null;
