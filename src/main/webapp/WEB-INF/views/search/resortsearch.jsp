@@ -20,6 +20,7 @@
 				<table class="table" style="width: 75%; margin:10px auto; margin-top: 50px;">
 		    		<tbody>
 		    			<c:forEach var="resort" items="${resort}">
+		    				<input type='hidden' id='co_type' name='co_type' value="${resort.co_type}"/>
 		    			
 		         			<tr style="width: 100% height: 100%">
 		           					<td>
@@ -36,7 +37,6 @@
 		           				<td class= "roomlist_box" style="width: 40%">
 		            				<div>
 		            					<h3>${resort.co_title}</h3>
-										<h3>${resort.ro_name}</h3>
 										<h6>최대인원 : ${resort.ro_max}명</h6>
 										<h6>${resort.ro_content}</h6>
 									</div>

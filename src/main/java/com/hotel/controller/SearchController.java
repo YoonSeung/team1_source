@@ -39,19 +39,20 @@ public class SearchController {
 	
 	@GetMapping("hotelsearch")
 	   public void hotelList(Model model) {
-	      List<Room_infoVO> hotel = service.gethotelList();
+	      List<Co_infoVO> hotel = service.gethotelList();
 	      model.addAttribute("hotel", hotel);
 	   }
+
 	
 	@GetMapping("motelsearch")
 	   public void motelList(Model model) {
-	      List<Room_infoVO> motel = service.getmotelList();
+	      List<Co_infoVO> motel = service.getmotelList();
 	      model.addAttribute("motel", motel);
 	   }
 	
 	@GetMapping("resortsearch")
 	   public void resortList(Model model) {
-	      List<Room_infoVO> resort = service.getresortList();
+	      List<Co_infoVO> resort = service.getresortList();
 	      model.addAttribute("resort", resort);
 	   }
 	

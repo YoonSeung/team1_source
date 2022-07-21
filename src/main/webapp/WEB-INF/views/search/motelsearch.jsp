@@ -19,7 +19,7 @@
 				<table class="table" style="width: 75%; margin:10px auto; margin-top: 50px;">
 		    		<tbody>
 		    			<c:forEach var="motel" items="${motel}">
-		    			
+		    				<input type='hidden' id='co_type' name='co_type' value="${motel.co_type}"/>
 		         			<tr style="width: 100% height: 100%">
 		           					<td>
 			           					<div class="panel-body">			
@@ -35,7 +35,6 @@
 		           				<td class= "roomlist_box" style="width: 40%">
 		            				<div>
 		            					<h3>${motel.co_title}</h3>
-										<h3>${motel.ro_name}</h3>
 										<h6>최대인원 : ${motel.ro_max}명</h6>
 										<h6>${motel.ro_content}</h6>
 									</div>

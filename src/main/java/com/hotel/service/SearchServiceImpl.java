@@ -19,18 +19,18 @@ public class SearchServiceImpl implements SearchService {
 	private SearchMapper mapper;
 	
 	@Override
-	public List<Room_infoVO>  gethotelList() {
+	public List<Co_infoVO>  gethotelList() {
 		return mapper.gethotelList();
 	}
 
 	@Override
-	public List<Room_infoVO> getmotelList() {
+	public List<Co_infoVO> getmotelList() {
 		// TODO Auto-generated method stub
 		return mapper.getmotelList();
 	}
 
 	@Override
-	public List<Room_infoVO> getresortList() {
+	public List<Co_infoVO> getresortList() {
 		// TODO Auto-generated method stub
 		return mapper.getresortList();
 	}

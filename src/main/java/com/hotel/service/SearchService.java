@@ -8,7 +8,7 @@ import com.hotel.domain.Room_infoVO;
 
 public interface SearchService {
 
-	public List<Room_infoVO> gethotelList();
-	public List<Room_infoVO> getmotelList();
-	public List<Room_infoVO> getresortList();
+	public List<Co_infoVO> gethotelList();
+	public List<Co_infoVO> getmotelList();
+	public List<Co_infoVO> getresortList();
 }

@@ -23,8 +23,10 @@
 <h2 style="text-align: center;">숙소수정</h2>
   <form role="form" id="frm" name="frm" method="post" action="/business/modify">
 
-  <td>
-						<div class="panel-body">        
+  					<td>
+						<div class="panel-body">
+							<div class="form-group uploadDiv">											
+							</div>	        
 				        <div class='hotelResult'> 
 				          <ul>
 

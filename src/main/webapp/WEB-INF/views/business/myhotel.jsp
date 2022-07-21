@@ -30,10 +30,12 @@
 	        <td style="width: 60%">
 
 	        <a href="${pageContext.request.contextPath}/room/roominfo?ro_num=${myhotel.co_code}">
-	        <input type="hidden" name="pic_num" value="${myhotel.co_name}">
+	        <input type="hidden" name="pic_num" value="${myhotel.co_code}">
 	        	<c:set var="ro_num" value="${myhotel.co_number}" />
 						<td>
-						<div class="roomlist_main-img" value="${get.co_code}">        
+						<div class="form-group uploadDiv">											
+						</div>	
+						<div class="roomlist_main-img">        
 				        <div class='hotelResult'> 
 				          <ul>
 

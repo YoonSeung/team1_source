@@ -28,10 +28,9 @@
        <div class="mb-3" style="margin-top: 20px;">
        <label>숙소 종류 :</label>
     <select id="co_type" name="co_type">
-    	<option>호텔</option>
-    	<option>모텔</option>
-    	<option>리조트</option>
-    	<option>펜션</option>
+							<option value="1">호텔</option>
+							<option value="2">모텔</option>
+							<option value="3">리조트</option>
     </select>
     </div>
     <div class="mb-3">
