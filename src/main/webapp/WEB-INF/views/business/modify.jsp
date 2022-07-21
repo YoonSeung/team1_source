@@ -42,43 +42,71 @@
        <label>숙소 종류 :</label>
    <select name="co_type">
 						<c:choose>
-							<c:when test='${modify.co_type=="호텔" }'>
-							<option value="호텔" selected="selected">호텔</option>
-							<option value="모텔">모텔</option>
-							<option value="리조트">리조트</option>
-							<option value="펜션">펜션</option>
+							<c:when test='${modify.co_type=="1" }'>
+							<option value="1" selected="selected">호텔</option>
+							<option value="2">모텔</option>
+							<option value="3">리조트</option>
+							
 						</c:when>						 
-							<c:when test='${modify.co_type=="모텔" }'>
-							<option value="호텔">호텔</option>
-							<option value="모텔" selected="selected">모텔</option>
-							<option value="리조트">리조트</option>
-							<option value="펜션">펜션</option>
-						</c:when>												
-							<c:when test='${modify.co_type=="리조트" }'>
-							<option value="호텔">호텔</option>
-							<option value="모텔">모텔</option>
-							<option value="리조트" selected="selected">리조트</option>
-							<option value="펜션">펜션</option>
-						</c:when>						
+							<c:when test='${modify.co_type=="2" }'>
+							<option value="1">호텔</option>
+							<option value="2" selected="selected">모텔</option>
+							<option value="3">리조트</option>
+							
+						</c:when>															
 							<c:otherwise>
-							<option value="호텔">호텔</option>
-							<option value="모텔">모텔</option>
-							<option value="리조트">리조트</option>
-							<option value="펜션" selected="selected">펜션</option>
+							<option value="1">호텔</option>
+							<option value="2">모텔</option>
+							<option value="3"selected="selected">리조트</option>
+							</c:otherwise>
+							</c:choose>
+						</select>
+    </div>
+        <div class="mb-3" style="margin-top: 20px;">
+       <label>객실 종류 :</label>
+   <select name="ro_type">
+						<c:choose>
+							<c:when test='${modify.ro_type=="1" }'>
+							<option value="1" selected="selected">디럭스룸</option>
+							<option value="2">스위트룸</option>
+							<option value="3">싱글룸</option>
+							
+						</c:when>						 
+							<c:when test='${modify.ro_type=="2" }'>
+							<option value="1">디럭스룸</option>
+							<option value="2" selected="selected">스위트룸</option>
+							<option value="3">싱글룸</option>
+							
+						</c:when>															
+							<c:otherwise>
+							<option value="1">디럭스룸</option>
+							<option value="2">스위트룸</option>
+							<option value="3"selected="selected">싱글룸</option>
 							</c:otherwise>
 							</c:choose>
 						</select>
     </div>
     <div class="mb-3">
+      <label>최대 인원수</label>
+      <input type="number" class="form-control" id="ro_max" name="ro_max" value="${ modify.ro_max}" required pattern="[0-9]+" required placeholder="숫자만 입력하세요">
+    </div>
+     <div class="mb-3">
+      <label>객실 가격</label>
+      <input type="number" class="form-control" id="ro_price" name="ro_price" value="${modify.ro_price}" required pattern="[0-9]+" required placeholder="숫자만 입력하세요">
+    <div class="mb-3">
       <label>숙소 위치</label>
       <input type="text" class="form-control" id="area_code3" name="area_code3" value="${modify.area_code3}" required>
+    </div>
+    <div class="mb-3" >
+    	<label style=" margin-bottom: 10px;" >숙소 소개&nbsp;&nbsp;&nbsp;</label>
+   		<textarea rows="10" cols="100" name="ro_content"required>${modify.ro_content}</textarea>
     </div>
        <label>대표자 이름 : </label>
       <input type="text" class="form-control" id="co_name" name="co_name" value="${modify.co_name}" required>
     </div>
     <div class="mb-3">
       <label>대표자 번호</label>
-      <input type="text" class="form-control" id="co_number" name="co_number" value="${modify.co_number}" pattern="[0-9]+" required placeholder="숫자만 입력하세요">
+      <input type="number" class="form-control" id="co_number" name="co_number" value="${modify.co_number}" pattern="[0-9]+" required placeholder="숫자만 입력하세요">
     </div>
 
     <div style="clear:both;"></div>

@@ -5,8 +5,11 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hotel.domain.Bo_infoVO;
 import com.hotel.domain.BusinessAttachVO;
 import com.hotel.domain.BusinessVO;
+import com.hotel.domain.Criteria;
+import com.hotel.mapper.BookingMapper;
 import com.hotel.mapper.BusinessAttachMapper;
 import com.hotel.mapper.BusinessMapper;
 
@@ -18,6 +21,7 @@ import lombok.extern.log4j.Log4j;
 public class BusinessSeviceImpl implements BusinessService {
 	private BusinessMapper mapper;
 	private BusinessAttachMapper attachMapper;
+	private BookingMapper bookingMapper;
 
 	@Override
 	public List<BusinessVO> getList() {
@@ -25,6 +29,19 @@ public class BusinessSeviceImpl implements BusinessService {
 		log.info("hotellist");
 
 		return mapper.selectAllHotel();
+	}
+	
+	@Override
+	public List<Bo_infoVO> getBlist(Criteria cri){
+		
+		log.info("bookingList");
+		return bookingMapper.getListWithPaging(cri);
+	}
+	
+	@Override
+	public int getTotal(Criteria cri) {
+			log.info("getTotal count");
+			return bookingMapper.getTotalCount(cri);
 	}
 
 	@Override

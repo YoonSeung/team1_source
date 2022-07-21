@@ -2,11 +2,15 @@ package com.hotel.controller;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 
+
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import com.hotel.domain.Criteria;
+import com.hotel.domain.PageDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +23,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.hotel.domain.Bo_infoVO;
 import com.hotel.domain.BusinessAttachVO;
 import com.hotel.domain.BusinessVO;
-import com.hotel.domain.RoomVO;
 import com.hotel.service.BusinessService;
-import com.hotel.service.RoomService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -34,7 +37,6 @@ import lombok.extern.log4j.Log4j;
 @AllArgsConstructor
 public class BusinessController {
 	private BusinessService service;
-	private RoomService rservice;
 	@GetMapping("main")
 	public void list(Model model) {
 		log.info("businessmain");
@@ -48,13 +50,13 @@ public class BusinessController {
 		model.addAttribute("myhotel", myhotel);
 	}
 
-	@GetMapping("hotelinsert")
+	@GetMapping("register")
 	public void hotelInsert(Model model) {
 		log.info("businessinsert");
-		model.addAttribute("insert");
+		model.addAttribute("register");
 	}
 
-	@PostMapping("/register")
+	@PostMapping("register")
 	public String register(BusinessVO business, RedirectAttributes rttr) {
 		log.info("register"+business);
 
@@ -141,14 +143,18 @@ public class BusinessController {
 				e.printStackTrace();
 			}
 		});
-}
-
-	@GetMapping("room")
-	public void room(@RequestParam("co_code") Long co_code, Model model) {
-		log.info("/Room");
-		List<RoomVO> room = rservice.getList();
-
-		model.addAttribute("room", service.getHotel(co_code));
-		model.addAttribute("room", room);
+		
+	
+		}
+	@GetMapping("booking")
+	public void bookingList(Criteria cri, Model model) {
+		log.info("bookingList"+cri);
+		
+		model.addAttribute("booking", service.getBlist(cri));
+		
+		int total = service.getTotal(cri);
+		
+		log.info("total :"+ total);
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 }
