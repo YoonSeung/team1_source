@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hotel.mapper.TripMapper">
+	<select id="selectAllTrip" resultType="com.hotel.domain.TripVO">
+ 		<![CDATA[
+ 			select * from trip_info order by trip_code desc
+ 		]]>
+ 	</select>
+ 	
+ 	<select id="read" resultType="com.hotel.domain.TripVO"> 		
+ 			select * from trip_info where trip_code=#{trip_code}	
+ 	</select>
+ 	
+ 	<insert id="insertTrip">
+ 		<selectKey keyProperty="trip_code" order="BEFORE" resultType="String">
+ 			select trip_info_seq.nextval from dual
+ 		</selectKey>
+ 		insert into trip_info values(#{trip_code}, #{area_code3}, #{trip_name}, #{trip_content}, #{trip_number}, #{regdate}, #{updatedate})
+ 	</insert>
+ 	
+ 	<select id="selectProductByCode" resultType="com.hotel.domain.TripVO">
+ 		SELECT * from trip_info where trip_code=#{trip_code}
+ 	</select>
+ 	
+ 	<update id="updateProduct">
+ 		update trip_info
+ 			set trip_code=#{trip_code}, area_code3=#{area_code3}, trip_name=#{trip_name}, trip_content=#{trip_content}, trip_number=#{trip_number}, regdate=#{regdate}, updatedate=#{updatedate}
+ 		WHERE 
+ 			trip_code=#{trip_code}
+ 	</update>
+ 	
+ 	<delete id="deleteMovie">
+ 		delete from trip_info where trip_code=#{trip_code} 
+ 	</delete>
+ 	
+</mapper>
