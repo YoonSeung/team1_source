@@ -23,7 +23,7 @@ public class AdminUserDetailsService implements UserDetailsService {
 		// TODO Auto-generated method stub
 		log.warn("Load Your By username : " + username);
 		
-		AdminVO vo = adminMapper.read(username);
+		AdminVO vo = adminMapper.ad_read(username);
 		
 		return vo == null ? null : new AdminUser(vo);
 	}

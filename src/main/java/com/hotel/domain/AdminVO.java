@@ -11,6 +11,6 @@ public class AdminVO {
 	private String ad_pass;
 	private String ad_name;
 	private Date regdate;
-	private Date update;
+	private Date updatedate;
 	private String enabled;
 }
