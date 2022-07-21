@@ -17,6 +17,9 @@ public class BusinessVO {
 	private String approval;
 	private String enabled;
 	private String ro_price;
+	private String ro_type;
+	private String ro_content;
+	private String ro_max;
 	private int reg_num;
 	private Date regdate;
 	private Date update;

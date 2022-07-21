@@ -8,7 +8,7 @@ import com.hotel.domain.BusinessVO;
 public interface BusinessMapper {
 
 	public List<BusinessVO>selectAllHotel();
-
+	
 	public BusinessVO selectProductByCode(Long co_code);
 
 	public void insertHotel(BusinessVO vo);
