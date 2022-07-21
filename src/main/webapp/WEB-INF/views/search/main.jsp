@@ -38,7 +38,7 @@
                             <div class="p-3" style="max-width: 700px;">
                                 <h6 class="section-title text-white text-uppercase mb-3 animated slideInDown">모텔</h6>
                                 <h1 class="display-3 text-white mb-4 animated slideInDown">남녀노소 쉽게 그게 <br/>우리의 모토입니다.</h1>
-                                <a onclick="location.href='${pageContext.request.contextPath}/search/motelsearch'" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">모텔 둘러보기</a>
+                                <a onclick="location.href='${pageContext.request.contextPath}/search/motelsearch?'" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">모텔 둘러보기</a>
                                 <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">모텔 예약하기</a>
                             </div>
                         </div>

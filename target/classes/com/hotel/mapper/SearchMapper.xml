@@ -5,27 +5,27 @@
 	
 <mapper namespace="com.hotel.mapper.SearchMapper">
 	
-	<select id="gethotelList" resultType="com.hotel.domain.Room_infoVO">
+	<select id="gethotelList" resultType="com.hotel.domain.Co_infoVO">
 	<![CDATA[
-	select co.co_code, co.co_title,co.co_type, ro.ro_code,ro.co_code,ro.ro_name,ro.ro_type,ro.ro_price,ro.ro_content,ro.ro_max
-	from co_info co, room_info ro
-	where co.co_code = ro.co_code and co.co_type='1'
+	select co_code, co_title,co_type,ro_type ,ro_price,ro_content,ro_max
+	from co_info 
+	where co_type='1'
 	]]>
 	</select>
 	
-	<select id="getmotelList" resultType="com.hotel.domain.Room_infoVO">
+	<select id="getmotelList" resultType="com.hotel.domain.Co_infoVO">
 	<![CDATA[
-	select co.co_code, co.co_title,co.co_type, ro.ro_code,ro.co_code,ro.ro_name,ro.ro_type,ro.ro_price,ro.ro_content,ro.ro_max
-	from co_info co, room_info ro
-	where co.co_code = ro.co_code and co.co_type='2'
+	select co_code, co_title,co_type,ro_type ,ro_price,ro_content,ro_max
+	from co_info 
+	where  co_type='2'
 	]]>
 	</select>
 	
-	<select id="getresortList" resultType="com.hotel.domain.Room_infoVO">
+	<select id="getresortList" resultType="com.hotel.domain.Co_infoVO">
 	<![CDATA[
-	select co.co_code, co.co_title,co.co_type, ro.ro_code,ro.co_code,ro.ro_name,ro.ro_type,ro.ro_price,ro.ro_content,ro.ro_max
-	from co_info co, room_info ro
-	where co.co_code = ro.co_code and co.co_type='3'
+	select co_code, co_title,co_type,ro_type ,ro_price,ro_content,ro_max
+	from co_info 
+	where  co_type='3'
 	]]>
 	</select>
 	

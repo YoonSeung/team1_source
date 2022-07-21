@@ -1,129 +1,147 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@include file="../common/memberheader.jsp" %>
+<%
+	// 로그인 하지 않았을 시 로그인 페이지로 이동
+/* 	if(session.getAttribute("u_idKey")==null){
+		response.sendRedirect("../login/login.jsp");
+	} */
+	// 오늘 날짜를 나타내는 변수 생성
+	Date today = new Date();
+	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	String now = simpleDateFormat.format(today);
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<!-- jQuery -->
-<style>
-button:disabled {
-    background-color: -internal-light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3)) !important;
-    color: -internal-light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
-    border-color: -internal-light-dark(rgba(118, 118, 118, 0.3), rgba(195, 195, 195, 0.3));
-}
-</style>
-<!-- iamport.payment.js -->
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
-<script>
-function requestPay() {
-  IMP.init('imp49486608'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
-  IMP.request_pay({
-    pg: "inicis",
-    pay_method: "card",
-    merchant_uid : 'merchant_'+new Date().getTime(),
-    name : 'Going 결제',
-    /* amount : ${booking.price}, */
-    amount : 100,
-    buyer_email : '${email}',
-    buyer_name : '${member.name}',
-    buyer_tel : '${member.tel}',
-    buyer_postcode : '123-456',
-  }, function (rsp) { // callback
-      if (rsp.success) {
-    	  $.ajax({
-	        	type : "POST",
-	        	url : "${pageContext.request.contextPath}/reservation/reservePro",
-	        	contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-	        	header:{"Content-Type":"application/json"},
-	    		dateType:'json',
-	    		data:{bo_num:rsp.imp_uid, payment:rsp.pay_method},
-	        }).done(function(data){
-	        	location.href='${pageContext.request.contextPath}/reservation/reservationList'+data
-	        })
-      } else {
-     	alert('결제 실패')
-      }
-  });
-}
-
-function chkReserve(){
-	const check1 = document.querySelector('#check1')
-	const check2 = document.querySelector('#check2')
-	const check3 = document.querySelector('#check3')
-	const btn = document.querySelector('#btn')
-	
-	if(check1.checked == true && check2.checked == true && check3.checked == true) {
-		btn.disabled = false
-	} else {
-		btn.disabled = true
-	}
-}
-</script>
-
+	<meta charset="UTF-8">
+	<title>객실 예약 : 날짜, 인원 선택</title>
+	<script type="text/javascript" src="../script/script.js?ver=1"></script>
+	<link rel="stylesheet" href="../css/reserveCSS.css">
+	<style>
+		#btn{
+			margin-top:15px;
+			margin-bottom:15px;
+			background-color: #382f24;
+		    width:120px;
+		    height:50px;
+		    border: none;
+		    font-size:medium;
+		    color:#f1ebd5;
+			}
+	</style>
 </head>
+
 <body>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>        
+
+                <!-- Room Start -->
+
+<div class="container" style="width: 800px; margin-top: 100px;">
+<h2 style="text-align: center;">숙소예약</h2>
+  <form role="form" id="frm" name="frm" method="get" action="/business/get">
+  	<input type="hidden" name="reserve" value="${myhotel.co_code}">
+
+  					<td>
+						<div class="panel-body">
+							<div class="form-group uploadDiv">											
+							</div>	        
+				        <div class='hotelResult'> 
+				          <ul>
+
+				          </ul>
+				        </div>
+
+				      </div>
+					</td>
+    <div class="mb-3 mt-3">
+      <label>숙소 이름 : ${modify.co_title} </label>    
+       <div class="mb-3" style="margin-top: 20px;">
+       <label>숙소 종류 :</label>
+   <select name="co_type">
+						<c:choose>
+							<c:when test='${modify.co_type=="1" }'>
+							<option value="호텔" selected="selected">호텔</option>
+							<option value="모텔">모텔</option>
+							<option value="리조트">리조트</option>
+							<option value="펜션">펜션</option>
+						</c:when>						 
+							<c:when test='${modify.co_type=="2" }'>
+							<option value="호텔">호텔</option>
+							<option value="모텔" selected="selected">모텔</option>
+							<option value="리조트">리조트</option>
+							<option value="펜션">펜션</option>
+						</c:when>												
+							<c:when test='${modify.co_type=="3" }'>
+							<option value="호텔">호텔</option>
+							<option value="모텔">모텔</option>
+							<option value="리조트" selected="selected">리조트</option>
+							<option value="펜션">펜션</option>
+						</c:when>						
+							</c:choose>
+						</select>
+    </div>
+    </div>
+    <div class="mb-3">
+      <label>숙소 위치</label>
+      <input type="text" class="form-control" id="area_code3" name="area_code3" value="${modify.area_code3}" required>
+    </div>
 
 
+    <div style="clear:both;"></div>
 
-<div class="default_width mt-5">
-	<div class="row" style="margin: 0 auto !important;">
-	  <div class="col-sm-8 reserve_left">
-	    <b class="large_text">예약자 정보</b>
-	      <div class="mt-5"><strong class="user_profile">예약자 이름</strong></div>
-	      <input type="text" class="form-control form-control-lg mt-3" value="${member.name}" readonly>
-	
-	      <div class="mt-5">
-	        <strong class="user_profile">휴대폰 번호</strong> <br>
-	        <input type="text" class="form-control form-control-lg mt-3" value="${member.tel}" readonly>
-	      </div>
-	
-	      <div class="mt-5" onclick="chkReserve()">
-	        <div class="form-check">
-	          <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" required>
-	          <label class="form-check-label" for="check1">숙소이용규칙 및 취소/환불규정 동의</label>
-	        </div>
-	        <div class="form-check">
-	          <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something" required>
-	          <label class="form-check-label" for="check2">개인정보 수집 및 이용 동의</label>
-	        </div>
-	        <div class="form-check">
-	          <input type="checkbox" class="form-check-input" id="check3" name="option2" value="something" required>
-	          <label class="form-check-label" for="check2">개인정보 제 3자 제공 동의</label>
-	        </div>
-	        
-	      </div>
-	  </div>
-	
-	  <div class="col-sm-4 reserve rounded">
-	    <div class="reserve_body">
-	      <p class="reserve_info">
-	        <strong class="reserve_name">숙소이름</strong> <br>
-	        ${booking.bu_title}
-	      </p>
-	      <p class="reserve_info">
-	        <strong class="reserve_name">객실타입</strong> <br>
-	        ${booking.ro_name }
-	      </p>
-	      <p class="reserve_info">
-	        <strong class="reserve_name">체크인</strong> <br>
-	        ${booking.checkin}
-	      </p>
-	      <p class="reserve_info">
-	        <strong class="reserve_name">체크아웃</strong> <br>
-	        ${booking.checkout}
-	      </p>
-	    </div>
-	
-	    <div class="reserve_body">
-	      <strong class="reserve_name" style="color: black;">총 결제 금액</strong> <br>
-	      <strong class="reserve_name" style="color: #ffc107; font-size: 30px;"><fmt:formatNumber value="${booking.price}" pattern="#,###" /></strong><strong class="reserve_name" style="color: black; font-size: 30px;"> 원</strong> <br>
-	    </div>
-	    <button class="btn" type="button" onclick="requestPay()" id="btn" disabled
-	    	style="width: 100%; height: 56px; background: #ffc107; color: white; border: none;">결제하기</button>
-	  </div>
-	  
-	</div>
+
+    <label style=" margin-bottom: 10px;">숙소사진&nbsp;&nbsp;&nbsp;</label>
+   <div class="panel-body">
+	        			<div class="form-group uploadDiv">
+						</div>
+						<div class='uploadResult'> 
+						<ul>
+
+		          			</ul>
+		          		</div>
+		          		</div>
+
+   <br>
+		<input type="hidden" id="co_code" name="co_code" value="${modify.co_code }">
+
+</form>
 </div>
+
+	<br/><br />
+		<table align="center" class="reservelist1">
+			<tr id="list1">
+				<td id="step1">날짜,인원 선택</td>
+				<td id="step2">객실 선택</td>
+				<td id="step3">옵션 선택</td>
+			</tr>
+		</table>
+		
+		<form action="reserve" method="get" name="reserve">
+			<table width="80%" align="center" class="reserve1">
+				<tr align="center" style="color:#a0a0a0; font-weight:bold;">
+					<td>체크인</td>
+					<td>체크아웃</td>
+					<td width="10%">성인</td>
+					<td width="10%">어린이</td>
+				</tr>
+				<tr align="center">
+					<td><input type="date" name="r_checkin" min='<%=now %>' /></td>
+					<td><input type="date" name="r_checkout" /></td>
+					<td><input type="number" name="r_adults" min="1" value="1"/></td>
+					<td><input type="number" name="r_kids" value="0" min="0" /></td>
+					<td><input type="submit" value="검색" id="btn" onclick="return reservationCheck()"/></td>
+				</tr>
+				<tr align="center">
+					<td colspan="5">예약을 원하는 날짜,인원을 선택해주세요</td>
+				</tr>
+		</table>
+		</form>
+		
+		<br /><br /><br /><br /><br /><br /><br />
+	
 </body>
 </html>
+<%@include file="../common/memberfooter.jsp" %>

@@ -6,7 +6,7 @@
 
 
         <!-- Room Start -->
-<form action="${pageContext.request.contextPath}/search/hotelsearch" method="get" name="f">     
+<form action="${pageContext.request.contextPath}/search/hotelsearch?" id="operForm" method="get" name="f">   
  	<div class="container-xxl py-5">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -17,6 +17,7 @@
 				<table class="table" style="width: 75%; margin:10px auto; margin-top: 50px;">
 					<tbody>
 						<c:forEach var="hotel" items="${hotel}">
+						<input type='hidden' id='co_type' name='co_type' value="${hotel.co_type}"/>
 							<tr style="width: 100% height: 100%">
 								<td>
 								<div class="panel-body">			
@@ -32,13 +33,12 @@
 		           				<td class= "roomlist_box" style="width: 40%">
 		            				<div>
 		            					<h3>${hotel.co_title}</h3>
-										<h3>${hotel.ro_name}</h3>
 										<h6>최대인원 : ${hotel.ro_max}명</h6>
 										<h6>${hotel.ro_content}</h6>
 									</div>
 									<div class="roomlist_bottom">
 										<h4><fmt:formatNumber value="${hotel.ro_price}" pattern="#,###" />원</h4>
-										 <input type="submit" class="btn btn-primary" value="예약">
+										 <button data-oper='reserve' class="btn btn-default">예약하기</button>	
 									</div>
 								</td>
 							</tr>							
@@ -50,6 +50,7 @@
 		</div>
 	</div>    
 </form>
+
         <!-- Room End -->
       
 <script>
@@ -76,5 +77,15 @@ $(document).ready(function(){
 	
 });	
 </script>	
+
+<script type="text/javascript">
+$(document).ready(function(){
+	var operForm = $("#operForm");
+	
+	$("button[data-oper='reserve']").on("click", function(e){
+		operForm.attr("action", "/views/reserve/reserve").submit();
+	});
+});
+</script>
 
 <%@include file="../common/memberfooter.jsp" %>

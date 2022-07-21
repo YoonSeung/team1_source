@@ -1,34 +1,41 @@
 package com.hotel.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.hotel.service.BusinessService;
+import com.hotel.service.MemberService;
+
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j;
 
 //import model.Booking;
 //import model.Member;
 //import util.DateParse;
 
 @Controller
-@RequestMapping("/reservation/*")
+@Log4j
+@RequestMapping("/reserve/*")
+@AllArgsConstructor
 public class ReservationController {
+	
+//	private MemberService service;
+	private BusinessService service;
+	
+	@GetMapping("/reserve")
+	public void getreserve(Model model) {
+		
+	
+	}
+	
+	@GetMapping("modify")
+	public void modify(@RequestParam("co_code") Long co_code, Model model) {
+		log.info("/modify");
 
-//	@RequestMapping("reserve")
-//	public String reserve(Bo_info booking) {
-//		String email = (String) session.getAttribute("email");
-//		Member m=null;
-//		
-//		try {
-//			m = memberService.getMemberOne(email);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		
-//		int night = DateParse.dateDif(booking.getCheckin(), booking.getCheckout()); // (checkout-checkin)
-//		booking.setPrice((Integer.parseInt(booking.getPrice()) * night)+"");
-//		booking.setEmail(email);
-//		
-//		session.setAttribute("booking", booking);
-//		model.addAttribute("member", m);
-//		
-//		return "/view/reserve/reserve";
-//	}
+
+		model.addAttribute("modify", service.getHotel(co_code));
+	}
 }
