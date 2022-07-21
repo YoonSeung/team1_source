@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hotel.mapper.AdminMapper">
+	<select id="read" resultType="com.hotel.domain.AdminVO">
+		select * from "admin_info" where "ad_id"=#{ad_id}
+	</select>
+</mapper>
