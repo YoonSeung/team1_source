@@ -11,22 +11,22 @@
 		ORDER BY CO_CODE DESC
 	</select>
 
-
-	<select id="selectProductByCode" resultType="com.hotel.domain.BusinessVO">
+ 	
+ 	<select id="selectProductByCode" resultType="com.hotel.domain.BusinessVO">
  		SELECT * from co_info WHERE CO_CODE=#{co_code}
  	</select>
 
-	<insert id="insertHotel">
-	<selectKey keyProperty="co_code" order="BEFORE" resultType="Long">
- 			select pic_seq.nextval from dual
+	<insert id="insertHotel" >
+ 		<selectKey keyProperty="co_code" order="BEFORE" resultType="Long">
+ 			select co_info_seq.nextval from dual
  		</selectKey>
- 		insert into co_info(co_code,co_title, co_type, area_code3, co_name, co_number)
- 		values(CO_INFO_SEQ.nextval, #{co_title}, #{co_type}, #{area_code3}, #{co_name}, #{co_number})
+ 		insert into co_info(co_code, area_code3, co_title, co_type, co_name, co_number, updatedate, ro_type, ro_max, ro_price, ro_content) 
+ 		values(#{co_code}, #{area_code3}, #{co_title}, #{co_type}, #{co_name}, #{co_number}, sysdate, #{ro_type}, #{ro_max}, #{ro_price}, #{ro_content})
  	</insert>
 
  	<update id="updateProduct">
  		update co_info
- 			set co_title=#{co_title}, co_type=#{co_type}, area_code3=#{area_code3}, co_name=#{co_name}, co_number=#{co_number}
+ 			set co_title=#{co_title}, co_type=#{co_type}, area_code3=#{area_code3}, co_name=#{co_name}, co_number=#{co_number}, ro_type=#{ro_type}, ro_max=#{ro_max}, ro_price=#{ro_price}, ro_content=#{ro_content}
  		WHERE 
  			co_code=#{co_code}
  	</update>
