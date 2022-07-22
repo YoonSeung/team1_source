@@ -13,7 +13,7 @@
 						<option value="2022">2022</option>
 					</select>
 					<input type="submit" value="검색">
-					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+<%-- 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
 				</form>
 				
 				<div class="container">
