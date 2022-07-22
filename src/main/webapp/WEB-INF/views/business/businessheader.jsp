@@ -107,7 +107,7 @@
                             <div class="navbar-nav mr-auto py-0">
                                 <a href="main" class="nav-item nav-link" data-toggle="tab">메인</a>
                                 <a href="myhotel" class="nav-item nav-link" data-toggle="tab">숙소관리</a>
-                                <a href="service.html" class="nav-item nav-link">예약관리</a>
+                                <a href="booking" class="nav-item nav-link" data-toggle="tab">예약관리</a>
                                 <a href="room.html" class="nav-item nav-link">서비스</a>  
                                 <a href="contact.html" class="nav-item nav-link">매출관리</a>
                                 <a href="service.html" class="nav-item nav-link">리뷰</a>

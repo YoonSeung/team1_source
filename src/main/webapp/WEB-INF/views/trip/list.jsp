@@ -28,7 +28,7 @@
 			<tr class="record">
 				<td><c:out value="${trip.trip_code}" /></td>	
 				<td style="text-align: center;">
-						<a class="trip" href='/trip/read?code=<c:out value="${trip.trip_name }"/>'>${trip.trip_name}</a>
+						<a class="trip" href='/trip/read?code=<c:out value="${trip.trip_code }"/>'>${trip.trip_name}</a>
 					</td>
 					<td style="text-align: center;">${trip.trip_number }</td>
 					<td style="text-align: center;">${trip.trip_content }</td>

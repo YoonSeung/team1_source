@@ -38,7 +38,7 @@ public class TripController {
 		model.addAttribute("trip", service.getList());
 	}
 	
-	@GetMapping("/reguster")
+	@GetMapping("/register")
 	public void register() {
 		
 	}

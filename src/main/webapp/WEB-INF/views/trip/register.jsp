@@ -3,6 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
+<%@include file="../common/memberheader.jsp" %>
+
 <div id="wrap" align="center" class="row">
 	<h1>영화정보 등록</h1>
 	<form role="form" name="frm" method="post" action="/trip/register">
@@ -162,3 +164,4 @@
 	});
 </script>
 
+<%@include file="../common/memberfooter.jsp" %>

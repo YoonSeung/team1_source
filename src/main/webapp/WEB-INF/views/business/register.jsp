@@ -28,21 +28,41 @@
        <div class="mb-3" style="margin-top: 20px;">
        <label>숙소 종류 :</label>
     <select id="co_type" name="co_type">
-							<option value="1">호텔</option>
-							<option value="2">모텔</option>
-							<option value="3">리조트</option>
+    	<option value="1">호텔</option>
+    	<option value="2">모텔</option>
+    	<option>리조트</option>
     </select>
+     <div class="mb-3" style="margin-top: 20px;">
+       <label>객실 종류 :</label>
+    <select id="ro_type" name="ro_type">
+                     <option value="1">디럭스룸</option>
+                     <option value="2">스위트룸</option>
+                     <option value="3">싱글룸</option>
+    </select>
+    </div>
+     <div class="mb-3">
+      <label>최대 인원수</label>
+      <input type="number" class="form-control" id="ro_max" name="ro_max" required pattern="[0-9]+" required placeholder="숫자만 입력하세요">
+    </div>
+    </div>
+     <div class="mb-3">
+      <label>객실 가격</label>
+      <input type="number" class="form-control" id="ro_price" name="ro_price" required pattern="[0-9]+" required placeholder="숫자만 입력하세요">
     </div>
     <div class="mb-3">
       <label>숙소 위치</label>
       <input type="text" class="form-control" id="area_code3" name="area_code3" required>
+    </div>
+    <div class="mb-3" >
+    	<label style=" margin-bottom: 10px;" >숙소 소개&nbsp;&nbsp;&nbsp;</label>
+   		<textarea rows="10" cols="100" name="ro_content"required></textarea>
     </div>
        <label>대표자 이름 : </label>
       <input type="text" class="form-control" id="co_name" name="co_name" required>
     </div>
     <div class="mb-3">
       <label>대표자 번호</label>
-      <input type="text" class="form-control" id="co_number" name="co_number"  pattern="[0-9]+" required placeholder="숫자만 입력하세요">
+      <input type="number" class="form-control" id="co_number" name="co_number"  pattern="[0-9]+" required placeholder="숫자만 입력하세요">
     </div>
 
     <div style="clear:both;"></div>
@@ -64,130 +84,129 @@
 		<button type="submit" class="default_btn rounded mt-1" data-oper='register'>등록</button>
 		<button type="reset" class="default_btn rounded mt-1">취소</button>
 		<button type="submit" class="default_btn rounded mt-1" data-oper='list'>목록</button>
+		<input type="hidden" id="co_code" name="co_code">
 </form>
 </div>
 </div>
 </div>
-<script>
-$(document).ready(function(){
-	var formObj = $("form[role='form']");
-	
-	$("button[data-oper='register']").on("click", function(e){
-		e.preventDefault();
-		console.log("submit clicked");
+	<script type="text/javascript">
+	$(document).ready(function(e){
+		var formObj = $("form[role='form']");
 		
-		var str = "";
-		
-		$(".uploadResult ul li").each(function(i, obj){
-			var jobj = $(obj);
+		$("button[type='submit']").on("click", function(e){
+			e.preventDefault();
+			console.log("submit clicked");
 			
-			console.log(jobj.data("type"));
+			var str = "";
 			
-			str += "<input type='hidden' name='attachList["+i+"].fileName' value='"+jobj.data("filename")+"'>";
-			str += "<input type='hidden' name='attachList["+i+"].uuid' value='"+jobj.data("uuid")+"'>";
-			str += "<input type='hidden' name='attachList["+i+"].uploadPath' value='"+jobj.data("path")+"'>";
-			str += "<input type='hidden' name='attachList["+i+"].fileType' value='"+jobj.data("type")+"'>";
+			$(".uploadResult ul li").each(function(i, obj){
+				var jobj = $(obj);
+				
+				console.log(jobj.data("type"));
+				
+				str += "<input type='hidden' name='attachList["+i+"].fileName' value='"+jobj.data("filename")+"'>";
+				str += "<input type='hidden' name='attachList["+i+"].uuid' value='"+jobj.data("uuid")+"'>";
+				str += "<input type='hidden' name='attachList["+i+"].uploadPath' value='"+jobj.data("path")+"'>";
+				str += "<input type='hidden' name='attachList["+i+"].fileType' value='"+jobj.data("type")+"'>";
+			});
+			
+			formObj.append(str).submit();
 		});
 		
-		formObj.append(str).submit();
-	});
-	
-	var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
-	var maxSize = 5242880; //5MB
-	
-	function checkExtendsion(fileName, fileSize){
-		if(fileSize >= maxSize){
-			alert("파일 사이즈 초과");
-			return false;
-		}
+		var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
+		var maxSize = 5242880; //5MB
 		
-		if(regex.test(fileName)){
-			alert("해당 종류의 파일은 업로드할 수 없습니다.");
-			return false;
-		}
-		
-		return true;
-	}
-	
-	$("input[type='file']").change(function(e){
-		var formData = new FormData();
-		var inputFile = $("input[name='uploadFile']");
-		var files = inputFile[0].files;
-		
-		
-		for(var i=0; i<files.length; i++){
-			if(!checkExtendsion(files[i].name, files[i].size)){
+		function checkExtendsion(fileName, fileSize){
+			if(fileSize >= maxSize){
+				alert("파일 사이즈 초과");
 				return false;
 			}
 			
-			formData.append("uploadFile", files[i]);
+			if(regex.test(fileName)){
+				alert("해당 종류의 파일은 업로드할 수 없습니다.");
+				return false;
+			}
+			
+			return true;
 		}
 		
-		$.ajax({
-			url: '/uploadAjaxAction',
-			processData: false,
-			contentType: false,
-			data: formData,
-			type:'POST',
-			dataType: 'json',
-			success: function(result){
-				console.log(result);
-				showUploadFile(result);
+		$("input[type='file']").change(function(e){
+			var formData = new FormData();
+			var inputFile = $("input[name='uploadFile']");
+			console.log("inputFile:"+inputFile.files);
+			var files = inputFile[0].files;
+			
+			
+			for(var i=0; i<files.length; i++){
+				if(!checkExtendsion(files[i].name, files[i].size)){
+					return false;
+				}
+				
+				formData.append("uploadFile", files[i]);
 			}
+			
+			$.ajax({
+				url: '/uploadAjaxAction',
+				processData: false,
+				contentType: false,
+				data: formData,
+				type:'POST',
+				dataType: 'json',
+				success: function(result){
+					console.log(result);
+					showUploadFile(result);
+				}
+			});
+			
 		});
 		
-	});
-	
-	function showUploadFile(uploadResultArr){
-		if(!uploadResultArr || uploadResultArr.length ==0)
-		{
-			return;	
+		function showUploadFile(uploadResultArr){
+			if(!uploadResultArr || uploadResultArr.length ==0)
+			{
+				return;	
+			}
+			
+			var uploadURL = $(".uploadResult ul");
+			var str = "";
+			
+			$(uploadResultArr).each(function(i, obj){
+				var fileCallPath =  encodeURIComponent("/s_"+obj.uuid +"_"+obj.fileName);
+				str += "<li data-path='"+obj.uploadPath+"'";
+				str +=" data-uuid='"+obj.uuid+"' data-filename='"+obj.fileName+"' data-type='"+obj.image+"'><div>";
+				str += "<span> "+ obj.fileName+"</span>";
+				str += "<button type='button' data-file=\'"+fileCallPath+"\' "
+				str += "data-type='image' class='btn btn-warning btn-circle'><i class='fa fa-times'></i></button><br>";
+				str += "<img src='/display?fileName="+fileCallPath+"'>";
+				str += "</div>";
+				str +"</li>";
+			});
+			
+			uploadURL.append(str);
 		}
 		
-		var uploadURL = $(".uploadResult ul");
-		var str = "";
-		
-		
-		$(uploadResultArr).each(function(i, obj){
-			var fileCallPath =  encodeURIComponent("/s_"+obj.uuid +"_"+obj.fileName);
-			console.log(fileCallPath);
-			str += "<li data-path='"+obj.uploadPath+"'";
-			str +=" data-uuid='"+obj.uuid+"' data-filename='"+obj.fileName+"' data-type='"+obj.image+"'><div>";
-			str += "<span> "+ obj.fileName+"</span>";
-			str += "<button type='button' data-file=\'"+fileCallPath+"\' "
-			str += "data-type='image' class='btn btn-warning btn-circle'><i class='fa fa-times'></i></button><br>";
-			str += "<img src='/display?fileName="+fileCallPath+"'>";
-			str += "</div>";
-			str +"</li>";
+		$(".uploadResult").on("click", "button", function(e){
+			var targetFile = $(this).data("file");
+			var type = $(this).data("type");
+			
+			var targetLi = $(this).closest("li");
+			
+			$.ajax({
+				url: '/deleteFile',
+				data: {fileName: targetFile, type:type},
+				dataType:'text',
+				type:'POST',
+				success: function(result){
+					alert(result);
+					targetLi.remove();
+				}
+			});
 		});
 		
-		uploadURL.append(str);
-	}
-	
-	$(".uploadResult").on("click", "button", function(e){
-		var targetFile = $(this).data("file");
-		//var type = $(this).data("type");
-		
-		var targetLi = $(this).closest("li");
-		
-		$.ajax({
-			url: '/deleteFile',
-			data: {fileName: targetFile},
-			dataType:'text',
-			type:'POST',
-			success: function(result){
-				alert(result);
-				targetLi.remove();
-			}
-		});
+		$("button[data-oper='list']").on("click", function(e){
+			formObj.attr("action", "/business/myhotel").attr("method", "get");
+			formObj.empty();
+			formObj.submit();
+		});	
 	});
-	
-	$("button[data-oper='list'").on("click", function(e){
-		formObj.find("#co_code").remove();
-		formObj.attr("action", "/business/myhotel").attr("method", "get");
-		formObj.empty();
-		formObj.submit();
-	});
-});
 </script>
 <%@ include file="../business/businessfooter.jsp" %>
