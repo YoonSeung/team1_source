@@ -129,6 +129,7 @@
 		<button type="reset" class="default_btn rounded mt-1">취소</button>
 		<button type="submit" class="default_btn rounded mt-1" data-oper='list'>목록</button>
 		<input type="hidden" id="co_code" name="co_code" value="${modify.co_code }">
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
 </form>
 </div>

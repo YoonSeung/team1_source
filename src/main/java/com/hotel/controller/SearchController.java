@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hotel.domain.Co_infoVO;
 import com.hotel.domain.Room_infoVO;
 import com.hotel.service.SearchService;
+import com.hotel.service.TripService;
 import com.hotel.util.DateParse;
 
 import lombok.AllArgsConstructor;
@@ -24,6 +26,7 @@ import lombok.extern.log4j.Log4j;
 public class SearchController {
 	
 	private SearchService service;
+	private TripService tripservice;
 
 	@GetMapping("/main")
 	public void list(Model model) {
@@ -42,6 +45,12 @@ public class SearchController {
 	      List<Co_infoVO> hotel = service.gethotelList();
 	      model.addAttribute("hotel", hotel);
 	   }
+	
+	@PostMapping("hotelsearch")
+	   public String hotelListpost(Model model) {
+
+	      return "redirect:../reserve/reserve";
+	   }
 
 	
 	@GetMapping("motelsearch")
@@ -55,6 +64,13 @@ public class SearchController {
 	      List<Co_infoVO> resort = service.getresortList();
 	      model.addAttribute("resort", resort);
 	   }
+	
+	@GetMapping("/get")
+	public void get(@RequestParam("trip_code") String trip_code, Model model) {
+		log.info("/get ");
+		
+		model.addAttribute("trip", tripservice.getTrip(trip_code));
+	}
 	
 	 
 }

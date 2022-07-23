@@ -58,6 +58,6 @@ public class LoginController {
 	
 	@PostMapping("adminLogout")
 	public String logout(AdminVO adminVO, HttpSession session) throws Exception{
-		return "adminLogin";
+		return "/adminLogin";
 	}
 }

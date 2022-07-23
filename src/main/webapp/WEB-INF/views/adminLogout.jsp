@@ -15,7 +15,7 @@
 		
 		<form action="/adminLogout" method="post" name="frm">
 			<input type="submit" value="로그아웃" class="btn">
-<%-- 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		</form>
 	</div>
 </body>

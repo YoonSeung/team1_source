@@ -126,7 +126,7 @@ $(function(){//비밀번호 확인
 								<button type='submit' class="btn btn-primary">회원가입</button>
 								<button type="reset" class="btn btn-danger">초기화</button>  
 							</div>
-		
+							<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 						</form>
 					</div>
 				</div>

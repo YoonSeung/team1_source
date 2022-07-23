@@ -15,16 +15,12 @@
 		<h2><c:out value="${error}" /></h2>
 		<h2><c:out value="${logout}" /></h2>
 		
-		<form action="/adminLogin" method="get" name="frm">
+		<form action="/login" method="post" name="frm">
 			<input type="text" name="username" placeholder="아이디">
 			<input type="password" name="password" placeholder="비밀번호">
-			
-<%-- 			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
-		</form>
-		<form action="/adminLogin" method="post" name="frm">
 			<input type="submit" value="로그인" class="btn" onclick="return adminCheck();">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		</form>
-		
 	</div>
 </body>
 </html>

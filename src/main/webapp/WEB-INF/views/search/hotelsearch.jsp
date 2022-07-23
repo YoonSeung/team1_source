@@ -6,7 +6,7 @@
 
 
         <!-- Room Start -->
-<form action="${pageContext.request.contextPath}/search/hotelsearch?" id="operForm" method="get" name="f">   
+<form action="${pageContext.request.contextPath}/search/hotelsearch?" id="operForm" method="post" name="f">   
  	<div class="container-xxl py-5">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -38,7 +38,8 @@
 									</div>
 									<div class="roomlist_bottom">
 										<h4><fmt:formatNumber value="${hotel.ro_price}" pattern="#,###" />원</h4>
-										 <button data-oper='reserve' class="btn btn-default">예약하기</button>	
+										 <button type="submit" data-oper='reserve' class="btn btn-info">예약하기</button>
+										 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 									</div>
 								</td>
 							</tr>							
@@ -50,6 +51,7 @@
 		</div>
 	</div>    
 </form>
+
 
         <!-- Room End -->
       

@@ -179,44 +179,44 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="/resources/img/trip1.jpg" alt="">
+                                <img class="img-fluid" src="/resources/img/trip1.jpg" onclick="location.href='${pageContext.request.contextPath}/trip/read?trip_code=<c:out value="${trip_code='1' }"/>'">
                             </div>
                             <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">추천명소명1</h5>
-                                <small>예시이미지 클릭</small>
+                                <h5 class="fw-bold mb-0">추천 1위 여행지</h5>
+                                <small>이미지를 클릭해주세요</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="/resources/img/trip1.jpg" alt="">
+                                <img class="img-fluid" src="/resources/img/trip2.jpg" onclick="location.href='${pageContext.request.contextPath}/trip/read?trip_code=<c:out value="${trip_code='2' }"/>'">
                             </div>
                             <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">추천명소명2</h5>
-                                <small>예시이미지 클릭</small>
+                                <h5 class="fw-bold mb-0">추천 2위 여행지</h5>
+                                <small>이미지를 클릭해주세요</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="/resources/img/trip2.jpg" alt="">
+                                <img class="img-fluid" src="/resources/img/trip3.jpg" onclick="location.href='${pageContext.request.contextPath}/trip/read?trip_code=<c:out value="${trip_code='3' }"/>'">
                             </div>
                             <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">추천명소명3</h5>
-                                <small>예시이미지 클릭</small>
+                                <h5 class="fw-bold mb-0">추천 3위 여행지</h5>
+                                <small>이미지를 클릭해주세요</small>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                                <img class="img-fluid" src="/resources/img/trip2.jpg" alt="">
+                                <img class="img-fluid" src="/resources/img/trip4.jpg" onclick="location.href='${pageContext.request.contextPath}/trip/read?trip_code=<c:out value="${trip_code='4' }"/>'">
                             </div>
                             <div class="text-center p-4 mt-3">
-                                <h5 class="fw-bold mb-0">추천명소명4</h5>
-                                <small>예시이미지 클릭</small>
+                                <h5 class="fw-bold mb-0">추천 4위 여행지</h5>
+                                <small>이미지를 클릭해주세요</small>
                             </div>
                         </div>
                     </div>

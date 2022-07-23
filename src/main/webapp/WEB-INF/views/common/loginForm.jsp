@@ -31,6 +31,7 @@
 							<a class="btn btn-primary" href="${pageContext.request.contextPath}/member/signupForm">회원가입</a>
 						</div>
 					</div>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
 			</div>
 			<!-- 고객 로그인 폼 end -->
@@ -50,6 +51,7 @@
 							<a class="btn btn-primary" href="${pageContext.request.contextPath}/member/buSignupForm">사업자 회원가입</a>
 						</div>
 					</div>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
 				<div style="margin : 100px 0 0 0;"></div>
 			</div>
