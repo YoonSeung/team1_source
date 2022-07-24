@@ -44,6 +44,12 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return mapper.getSelectOne(mVo);
 	}
+
+	@Override
+	public MemberVO read(String mm_email) {
+		// TODO Auto-generated method stub
+		return mapper.read(mm_email);
+	}
 	
 	
 	

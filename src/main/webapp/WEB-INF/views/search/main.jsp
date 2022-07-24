@@ -221,7 +221,28 @@
                 </div>
             </div>
         </div>
+        	<form id="actionForm" action="/search/main" method="get">
+		
+	</form>
         <!-- 여행지 End -->
+<script>
+$(document).ready(function(){
+	var result = '<c:out value="${result}"/>';
+	var actionForm = $("#actionForm");
+		
+	checkModal(result);
+	
+	history.replaceState({}, null, null);
 
+	$(".move").on("click", function(e){
+		e.preventDefault();
+		actionForm.append("<input type='hidden' name='mm_email' value='" + $(this).attr("href")+"'>");
+		actionForm.attr("action","/member/memberget");
+		actionForm.submit();
+	});
+});
+	
+	
+</script>
         
 <%@include file="../common/memberfooter.jsp" %>

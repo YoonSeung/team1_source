@@ -93,10 +93,10 @@
 												<a class="btn btn-succes">${memberVO.mm_name }님 환영합니다.</a>
 										        </li>
 												<li class="nav-item">
-										           <a class="btn btn-dark" href="${pageContext.request.contextPath}/member/memberInfo">내 정보</a>
+										           <a class="move btn btn-dark" href="${pageContext.request.contextPath}/member/memberget?${memberVO.mm_email}">내 정보</a>
 										        </li>
 										        <li class="nav-item">
-										           <a class="btn btn-primary" href="${pageContext.request.contextPath}/reservation/reservationList">예약 내역</a>
+										           <a class="btn btn-primary" href="${pageContext.request.contextPath}/search/qna">예약 내역</a>
 										        </li>
 										        <li class="nav-item">
 										           <a class="btn btn-dark" href="${pageContext.request.contextPath}/common/logout">로그아웃</a>
@@ -143,4 +143,5 @@
                 </div>
             </div>
         </div>
+        
         <!-- Header End -->

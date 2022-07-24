@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../common/memberheader.jsp" %>
-
 <body>
 	<div id="wrap" align="center">
 		<h1>추천 여행지 수정</h1>
@@ -25,19 +24,19 @@
 						<table>
 							<tr>
 							<th style="text-align:center;width:60px;">명  칭</th>
-							<td><input type="text" name="trip_name" size="60"></td>
+							<td><input type="text" name="trip_name" value="${trip.trip_name}" size="60"></td>
 						</tr>
 						<tr>
 							<th style="text-align:center;">전화번호</th>
-							<td><input type="text" name="trip_number" size="60"></td>
+							<td><input type="text" name="trip_number" value="${trip.trip_number}" size="60"></td>
 						</tr>
 						<tr>
 							<th style="text-align:center;">주  소</th>
-							<td><input type="text" name="area_code3" size="60"></td>
+							<td><input type="text" name="area_code3" value="${trip.area_code3}" size="60"></td>
 						</tr>
 						<tr>
 							<th style="text-align:center;">내  용</th>
-							<td><input type="text" name="trip_content" size="60"></td>
+							<td><input type="text" name="trip_content" value="${trip.trip_content}" size="60"></td>
 						</tr>
 						<tr>
 							<th style="text-align:center;">사  진</th>

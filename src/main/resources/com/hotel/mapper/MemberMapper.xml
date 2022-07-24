@@ -27,6 +27,7 @@
         WHERE mm_email = #{mm_email}
 	</select> 
 	
+	
 	<select id="getSelectOne" parameterType="com.hotel.domain.MemberVO" resultType="com.hotel.domain.MemberVO">
 		select * from mm_info where mm_email=#{mm_email} and mm_pass=#{mm_pass}
 	</select>

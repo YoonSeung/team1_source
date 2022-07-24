@@ -13,5 +13,6 @@ public interface MemberService {
 	public int idCheck(String mm_email);
 	public MemberVO selectMemberOne(String mm_email);
 	public MemberVO getSelectOne(MemberVO mVo);
+	public MemberVO read(String mm_email);
 
 }

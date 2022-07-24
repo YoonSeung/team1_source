@@ -1,6 +1,7 @@
 package com.hotel.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +53,12 @@ public class MemberController{
 				}		
 		return str;	
 		}
+	
+	@GetMapping("/memberget")
+	public void get(@RequestParam(name= "mm_email" , required = false ) String mm_email, Model model) {
+		log.info("/get");
+		model.addAttribute("member", service.read(mm_email));
+	}
 	
 }
 
