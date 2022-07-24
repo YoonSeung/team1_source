@@ -29,6 +29,15 @@
 	]]>
 	</select>
 	
-
+	<select id="getList" resultType="com.hotel.domain.BusinessVO">
+		select *
+		from co_info
+		where co_type=#{co_type}
+		ORDER BY CO_CODE DESC
+	</select>
+	
+		<select id="selectProductByCode" resultType="com.hotel.domain.BusinessVO">
+ 		SELECT * from co_info WHERE CO_CODE=#{co_code}
+ 	</select>
 	
 </mapper>

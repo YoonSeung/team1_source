@@ -1,26 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<script src="${pageContext.request.contextPath}/resources/js/dateCheck.js"></script>
-<script>
-	function NoMultiChk(chk) {
-		var obj = document.getElementsByName("bu_id");
-		for (var i = 0; i < obj.length; i++) {
-			if (obj[i] != chk) {
-				obj[i].checked = false;
-			}
-		}
-	}
-</script>
-</head>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@include file="../common/memberheader.jsp" %>
 
 <body>
 	<div class=default_width>
 		<div class="search_bottom_box mt-3">
 			
-			<!-- 상세조건 사이드바 -->
+			<%-- <!-- 상세조건 사이드바 -->
 			<div class="search_filter_box">
 				<h3>상세조건</h3>
 				<hr class="gray_line">
@@ -102,45 +89,80 @@
 					<button type=submit class=search_commit_button_size style="border: none;">적용</button>
 				</form>
 			</div>
-			<!-- 상세조건 사이드바 끝 --> 
+			<!-- 상세조건 사이드바 끝 -->  --%>
 			
 			<!-- 숙소 리스트 -->
-			<div class="search_list_mainbox">
-				<c:forEach var="bu" items="${bu_list}">
-					<c:if test="${bu.minPrice != null}">
-						<div class="search_list_box">
-							<form action="${pageContext.request.contextPath}/reservation/detail" class="search_list_abox" method="get">
-								<input type="hidden" name="bu_email" value="${bu.bu_email }">
-								<input type="hidden" name="checkin" value="${searchDTO.checkin }">
-								<input type="hidden" name="checkout" value="${searchDTO.checkout }">
-								<input type="hidden" name="ro_count" value="${searchDTO.ro_count }">
-								<div class="reserve_room" style="width: 690px; margin-top: 0px; padding-left: 385px;">
-									<p class="reserve_pic_view" style="width: 330px;">
-										<img src="${bu.picLocation}" class="rounded" style="width: 330px; height: 226px; object-fit: cover;">
-									</p>
-									<div style="margin: 0 auto"></div>
-									
-									<div class="search_room_title" style="width: 300px; margin-bottom: -2px;">
-										<strong >${bu.bu_title}</strong>
-										<p class="gray_text" style="font-size: 14px; margin-top:10px;">
-											<img src="https://cdn4.iconfinder.com/data/icons/music-ui-solid-24px/24/location_map_marker_pin-2-512.png" style="width: 20px;"> ${bu.bu_address}
-										</p>
-									</div>
-									<div class="reserve_room_price row" style="width: 300px;">
-										<div class="col-sm-3">
-											<strong class="medium_text">가격</strong>
-										</div>
-										<div class="col-sm-9 right_text">
-											<b class="large_text"><fmt:formatNumber value="${bu.minPrice}" pattern="#,###" />원</b>
-										</div>
-									</div>
-									<input type="submit" class="reserve_room_btn default_btn medium_text rounded" value="숙소 살펴보기" style="margin-left: -5px;">
-								</div>
-							</form>
-						</div>
-					</c:if>
-				</c:forEach>
-			</div>
+<div class="container" style="margin-top:100px">
+<table class="table" style="width: 75%; margin:10px auto; margin-top: 50px;">
+    <tbody>
+    <c:if test="${empty myhotel}">
+    	<h1>등록된 숙소가 없습니다.</h1>
+    	</c:if>
+    <c:if test="${not empty myhotel}">
+    <c:forEach var="myhotel" items="${myhotel}">
+	      <tr style="width: 100%">
+	        <td style="width: 60%">
+
+
+	        <a href="${pageContext.request.contextPath}/room/roominfo?ronum=${myhotel.co_code}">
+	        <input type="hidden" name="pic_num" value="${myhotel.co_name}">
+
+	        	<c:set var="ro_num" value="${myhotel.co_number}" />
+	        	<img class="roomlist_main-img"src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp">
+						<td>
+
+						<div class="roomlist_main-img">        
+				        <div class='hotelResult'> 
+				          <ul>
+
+				          </ul>
+				        </div>
+
+				      </div>
+					</td>
+	        </a></td>
+	        <td class= "roomlist_box" style="width: 60%">
+				<div>
+					<h3>${myhotel.co_title}</h3>
+					<h6>숙소위치 : ${myhotel.area_code3}</h6>
+					<h6><c:choose>
+					         <c:when test = '${myhotel.ro_type=="1"}'>
+					            <h6>객실종류 : 디럭스룸</h6>
+					         </c:when>
+					
+					         <c:when test = '${myhotel.ro_type== "2" }'>
+					            <h6>객실종류 : 스위트룸</h6>
+					         </c:when>
+					
+					         <c:otherwise>
+					           <h6>객실종류 : 싱글룸</h6>
+					         </c:otherwise>
+					</c:choose></h6>
+					<h6>최대인원수 :${myhotel.ro_max}</h6>
+					<h6>소개 :${myhotel.ro_content}</h6>
+				</div>
+				<div class="roomlist_bottom">
+				     <c:choose>
+					         <c:when test = '${myhotel.co_type=="1"}'>
+					            <h4>호텔</h4>
+					         </c:when>
+					
+					         <c:when test = '${myhotel.co_type== "2" }'>
+					            <h4>모텔</h4>
+					         </c:when>
+					
+					         <c:otherwise>
+					           <h4>리조트</h4>
+					         </c:otherwise>
+					</c:choose>
+				</div>
+			</td>
+	      </tr>
+      </c:forEach>
+      </c:if>
+    </tbody>
+  </table>
+</div>
 			<!-- 숙소 리스트 끝 -->
 			
 		</div>
@@ -195,4 +217,4 @@ slider2.on('input', function() {
 });
 // 검색 실시간 텍스트 표시 끝
 </script>
-</html>
+<%@include file="../common/memberfooter.jsp" %>
