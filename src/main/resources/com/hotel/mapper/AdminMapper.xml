@@ -39,12 +39,33 @@
 	</select>
 	
 	<delete id="mm_delete">
+		delete from bo_info where mm_email=#{mm_email}
+		delete from pay_info where mm_email=#{mm_email}
+		delete from coupon where mm_email=#{mm_email}
+		delete from wishlist where mm_email=#{mm_email}
 		delete from mm_info where mm_email=#{mm_email}
 	</delete>
 	
 	<select id="mm_count" resultType="int">
 		<![CDATA[
 			select count(*) from mm_info
+		]]>
+	</select>
+	
+	<!-- 사업자 관리 -->
+	<select id="bu_list" resultType="com.hotel.domain.Co_infoVO">
+		<![CDATA[
+			select * from co_info order by regdate desc
+		]]>
+	</select>
+	
+	<delete id="bu_delete">
+		delete from co_info where co_code=#{co_code}
+	</delete>
+	
+	<select id="bu_count" resultType="int">
+		<![CDATA[
+			select count(*) from co_info
 		]]>
 	</select>
 </mapper>
