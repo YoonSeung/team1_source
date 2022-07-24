@@ -26,12 +26,12 @@
  	
  	<update id="updateProduct">
  		update trip_info
- 			set trip_code=#{trip_code}, area_code3=#{area_code3}, trip_name=#{trip_name}, trip_content=#{trip_content}, trip_number=#{trip_number}, regdate=#{regdate}, updatedate=#{updatedate}
+ 			set area_code3=#{area_code3}, trip_name=#{trip_name}, trip_content=#{trip_content}, trip_number=#{trip_number}, regdate=#{regdate}, updatedate=#{updatedate}
  		WHERE 
  			trip_code=#{trip_code}
  	</update>
  	
- 	<delete id="deleteMovie">
+ 	<delete id="deleteTrip">
  		delete from trip_info where trip_code=#{trip_code} 
  	</delete>
  	

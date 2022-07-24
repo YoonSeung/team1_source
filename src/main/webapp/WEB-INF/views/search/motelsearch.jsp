@@ -40,7 +40,7 @@
 									</div>
 									<div class="roomlist_bottom">
 										<h4><fmt:formatNumber value="${motel.ro_price}" pattern="#,###" />원</h4>
-										  <button type="submit" data-oper='reserve' class="btn btn-info">예약하기</button>
+										 <a class="btn btn-warning" style="float:right;" href='/reserve/reserve?co_code=<c:out value="${motel.co_code }"/>'>예약하기</a>
 										 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 									</div>
 								</td>

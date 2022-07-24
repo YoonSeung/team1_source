@@ -6,8 +6,9 @@
 <%@include file="../common/memberheader.jsp" %>
 
 <div id="wrap" align="center" class="row">
-	<h1>영화정보 등록</h1>
+	<h1>추천 여행지 등록</h1>
 	<form role="form" name="frm" method="post" action="/trip/register">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<table style="width:640px;">
 				<tr>
 					<th style="text-align:center;width:60px;">명  칭</th>

@@ -4,13 +4,9 @@
 
 
         <!-- About Start -->
-        <div class="container-xxl py-5">
-            <div class="container">
-                <div class="row g-5 align-items-center">
-  					<img class="img-fluid" src="/resources/img/page.png"> 
-                </div>
-            </div>
-        </div>
+        <div class="container-fluid px-4" style="text-align: center; padding-top: 100px;">
+				<img src="/resources/img/page.png" alt="페이지 준비중입니다.">
+			</div>
         <!-- About End -->
 
 

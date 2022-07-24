@@ -3,13 +3,16 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../common/memberheader.jsp" %>
-<div id="wrap" align="left">
+
+<div id="wrap">
 	<h1>추천 여행지 목록</h1>
-	<table>
+	
+	<div class="container">
+	<table style="width: 75%; margin:10px auto; margin-top: 50px;">
 		<tr>
 			<td colspan=6 style="border:white; text-align:right">
 				<div>
-					<button id="regBtn" type="button" class="btn btn-xs pull-right">
+					<button id="regBtn" type="button" class="btn btn-primary pull-right" onclick="location.href='register'">
 						추천 여행지 등록
 					</button>
 				</div>
@@ -28,16 +31,16 @@
 			<tr class="record">
 				<td><c:out value="${trip.trip_code}" /></td>	
 				<td style="text-align: center;">
-						<a class="trip" href='/trip/read?code=<c:out value="${trip.trip_code }"/>'>${trip.trip_name}</a>
+						<a class="trip" href='/trip/read?trip_code=<c:out value="${trip.trip_code }"/>'>${trip.trip_name}</a>
 					</td>
 					<td style="text-align: center;">${trip.trip_number }</td>
 					<td style="text-align: center;">${trip.trip_content }</td>
 					<td style="text-align: center;width=:100px;">${trip.area_code3 }</td>
 					<td style="text-align: center;width=:100px;">
-						<a class="trip" href='/trip/modify?code=<c:out value="${trip.trip_code }"/>'>정보수정</a>
+						<a class="trip" href='/trip/modify?trip_code=<c:out value="${trip.trip_code }"/>'>정보수정</a>
 					</td>
 					<td style="text-align: center;width=:100px;">
-						<a class="trip" href='/trip/delete?code=<c:out value="${trip.trip_code }"/>'>정보삭제</a>
+						<a class="trip" href='/trip/delete?trip_code=<c:out value="${trip.trip_code }"/>'>정보삭제</a>
 					</td>
 				</tr>
 				<form id='operForm' action="/trip/modify" method="get">
@@ -45,6 +48,7 @@
 				</form>
 			</c:forEach>
 		</table>
+		</div>
 	</div>
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
 							aria-labelledby="myModalLabel" aria-hidden="true">
