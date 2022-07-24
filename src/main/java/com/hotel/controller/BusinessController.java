@@ -42,6 +42,16 @@ public class BusinessController {
 		log.info("businessmain");
 		model.addAttribute("main");
 	}
+	
+	@GetMapping("/buSignupForm")
+	public void busignupForm() {
+		
+	}
+	
+	@GetMapping("/error")
+	public void error() {
+		
+	}
 
 	@GetMapping("myhotel")
 	public void hotelList(Model model) {
@@ -114,7 +124,7 @@ public class BusinessController {
 
 
 	@GetMapping("/delete")
-	public String remove(@RequestParam(value="co_code",required =false) Long co_code, RedirectAttributes rttr) {
+	public String remove(@RequestParam("co_code") Long co_code, RedirectAttributes rttr) {
 		log.info("delete....."+co_code);
 
 		List<BusinessAttachVO> attachList = service.getAttachList(co_code);

@@ -24,6 +24,11 @@
  		values(#{co_code}, #{area_code3}, #{co_title}, #{co_type}, #{co_name}, #{co_number}, sysdate, #{ro_type}, #{ro_max}, #{ro_price}, #{ro_content})
  	</insert>
 
+<insert id="insert">
+insert into co_info(co_code, area_code3, co_title, co_type, co_name, co_number, updatedate, ro_type, ro_max, ro_price, ro_content) 
+ 		values(#{co_code}, #{area_code3}, #{co_title}, #{co_type}, #{co_name}, #{co_number}, sysdate, #{ro_type}, #{ro_max}, #{ro_price}, #{ro_content})
+	</insert> 
+	
  	<update id="updateProduct">
  		update co_info
  			set co_title=#{co_title}, co_type=#{co_type}, area_code3=#{area_code3}, co_name=#{co_name}, co_number=#{co_number}, ro_type=#{ro_type}, ro_max=#{ro_max}, ro_price=#{ro_price}, ro_content=#{ro_content}

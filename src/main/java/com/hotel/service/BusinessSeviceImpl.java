@@ -2,6 +2,7 @@ package com.hotel.service;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +30,14 @@ public class BusinessSeviceImpl implements BusinessService {
 		log.info("hotellist");
 
 		return mapper.selectAllHotel();
+	}
+	
+	@Override
+	public void busignupForm(BusinessVO vo) {
+		// TODO Auto-generated method stub
+		log.info("signupForm....." + vo);
+		mapper.insert(vo);
+
 	}
 	
 	@Override

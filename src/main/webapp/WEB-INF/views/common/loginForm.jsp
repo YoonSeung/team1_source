@@ -45,10 +45,10 @@
 					<hr>
 					<div class="row mt-3">
 						<div class="col-sm-6" style="text-align: center;">
-							<input type="submit" class="btn btn-primary" value="사업자 로그인">
+							<a class="btn btn-primary" href="${pageContext.request.contextPath}/business/main">사업자 로그인</a>
 						</div>
 						<div class="col-sm-6" style="text-align: center;">
-							<a class="btn btn-primary" href="${pageContext.request.contextPath}/member/buSignupForm">사업자 회원가입</a>
+							<a class="btn btn-primary" href="${pageContext.request.contextPath}/business/buSignupForm">사업자 회원가입</a>
 						</div>
 					</div>
 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

@@ -32,10 +32,12 @@
 			<c:out value="${pageMaker.cri.type eq 'C'?'selected':''}"/>>예약자이름</option>
 		<option value="W"
 			<c:out value="${pageMaker.cri.type eq 'W'?'selected':''}"/>>체크인</option>
-		<option value="TC"
-			<c:out value="${pageMaker.cri.type eq 'TC'?'selected':''}"/>>체크아웃</option>
-		<option value="TW"
-			<c:out value="${pageMaker.cri.type eq 'TW'?'selected':''}"/>>예약상태</option>
+		<option value="Z"
+			<c:out value="${pageMaker.cri.type eq 'Z'?'selected':''}"/>>체크아웃</option>
+		<option value="X"
+			<c:out value="${pageMaker.cri.type eq 'X'?'selected':''}"/>>예약상태</option>
+			<option value="Y"
+			<c:out value="${pageMaker.cri.type eq 'Y'?'selected':''}"/>>숙소이름</option>
 	</select> <input type='text' name='keyword'
 		value='<c:out value="${pageMaker.cri.keyword}"/>' /> <input
 		type='hidden' name='pageNum'
@@ -50,6 +52,7 @@
 	  <table class="table table-hover" style="margin-top: 30px; text-align: center;">
 	    <thead>
 	      <tr>
+	      	<th>숙소 이름</th>
 	     	<th>객실 이름</th>
 	        <th>이용인원수</th>
 	        <th>체크인</th>
@@ -63,7 +66,12 @@
 	    <tbody>
 	    <c:forEach var="b" items="${booking}" varStatus="i">
 	      <tr>
-	     	<td>${b.ro_type}</td>
+	      <td>${b.co_title}</td>
+	     	<td><c:choose>
+	        		<c:when test="${b.ro_type == '1'}">디럭스</c:when>
+	        		<c:when test="${b.ro_type == '2'}">스위트</c:when>
+	        		<c:when test="${b.ro_type == '3'}">싱글</c:when>
+	        	</c:choose></td>
 	        <td>${b.ro_max}</td>
 	        <td>${b.checkin}</td>
 	        <td>${b.checkout}</td>
