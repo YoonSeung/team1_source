@@ -42,7 +42,7 @@
 <div class="container" style="width: 800px; margin-top: 100px;">
 <h2 style="text-align: center;">숙소예약</h2>
   <form role="form" id="frm" name="frm" method="get" action="/business/get">
-  	<input type="hidden" name="reserve" value="${myhotel.co_code}">
+  		<input type="hidden" id="co_code" name="co_code" value="${get.co_code }">
 
   					<td>
 						<div class="panel-body">
@@ -57,24 +57,24 @@
 				      </div>
 					</td>
     <div class="mb-3 mt-3">
-      <label>숙소 이름 : ${modify.co_title} </label>    
+      <label>숙소 이름 : ${get.co_title} </label>    
        <div class="mb-3" style="margin-top: 20px;">
        <label>숙소 종류 :</label>
    <select name="co_type">
 						<c:choose>
-							<c:when test='${modify.co_type=="1" }'>
+							<c:when test='${get.co_type=="1" }'>
 							<option value="호텔" selected="selected">호텔</option>
 							<option value="모텔">모텔</option>
 							<option value="리조트">리조트</option>
 							<option value="펜션">펜션</option>
 						</c:when>						 
-							<c:when test='${modify.co_type=="2" }'>
+							<c:when test='${get.co_type=="2" }'>
 							<option value="호텔">호텔</option>
 							<option value="모텔" selected="selected">모텔</option>
 							<option value="리조트">리조트</option>
 							<option value="펜션">펜션</option>
 						</c:when>												
-							<c:when test='${modify.co_type=="3" }'>
+							<c:when test='${get.co_type=="3" }'>
 							<option value="호텔">호텔</option>
 							<option value="모텔">모텔</option>
 							<option value="리조트" selected="selected">리조트</option>
@@ -86,7 +86,7 @@
     </div>
     <div class="mb-3">
       <label>숙소 위치</label>
-      <input type="text" class="form-control" id="area_code3" name="area_code3" value="${modify.area_code3}" required>
+      <input type="text" class="form-control" id="area_code3" name="area_code3" value="${get.area_code3}" required>
     </div>
 
 
@@ -98,6 +98,9 @@
 	        			<div class="form-group uploadDiv">
 						</div>
 						<div class='uploadResult'> 
+						<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp"
+	            						class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+	            						alt="Sample photo" >
 						<ul>
 
 		          			</ul>
@@ -105,7 +108,6 @@
 		          		</div>
 
    <br>
-		<input type="hidden" id="co_code" name="co_code" value="${modify.co_code }">
 
 </form>
 </div>
@@ -119,7 +121,7 @@
 			</tr>
 		</table>
 		
-		<form action="reserve" method="get" name="reserve">
+		<form action="reserve" method="post" name="reserve">
 			<table width="80%" align="center" class="reserve1">
 				<tr align="center" style="color:#a0a0a0; font-weight:bold;">
 					<td>체크인</td>
@@ -132,7 +134,10 @@
 					<td><input type="date" name="r_checkout" /></td>
 					<td><input type="number" name="r_adults" min="1" value="1"/></td>
 					<td><input type="number" name="r_kids" value="0" min="0" /></td>
-					<td><input type="submit" value="검색" id="btn" onclick="return reservationCheck()"/></td>
+					<td><input type="submit" value="예약하기" id="btn" onclick="location.href='${pageContext.request.contextPath}/reserve/reserveresult"/>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+					</td>
+					
 				</tr>
 				<tr align="center">
 					<td colspan="5">예약을 원하는 날짜,인원을 선택해주세요</td>

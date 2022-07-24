@@ -63,21 +63,18 @@
 		
           <!-- Booking Start -->
         <div class="container-fluid booking pb-5 wow fadeIn" data-wow-delay="0.1s">
-        <form action="${pageContext.request.contextPath}/search/search" name="f" method="get">
+        <form action="${pageContext.request.contextPath}/search/main?" name="f" method="post">
         <div class=main_twice_box>
 					<!-- 숙소 종류 선택 탭 -->
 					<ul class="nav nav-tabs nav-justified"  data-toggle="tab-hover" >
 						<li class="nav-item">
-							<a class="nav-link active" data-bs-toggle="tab" style="background: white; color:black; cursor: pointer" onclick="document.getElementById('bu_id').value='1'">호텔</a>
+							<a class="nav-link active" id="date3" data-bs-toggle="tab" style="background: white; color:black; cursor: pointer" onclick="document.getElementById('co_type').value='1'">호텔</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-bs-toggle="tab" style="color: black; cursor: pointer" onclick="document.getElementById('bu_id').value='2'">모텔</a>
+							<a class="nav-link" id="date3" data-bs-toggle="tab" style="color: black; cursor: pointer" onclick="document.getElementById('co_type').value='2'">모텔</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" data-bs-toggle="tab" style="color: black; cursor: pointer" onclick="document.getElementById('bu_id').value='3'">펜션</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" data-bs-toggle="tab" style="color: black; cursor: pointer" onclick="document.getElementById('bu_id').value='4'">리조트</a>
+							<a class="nav-link" id="date3" data-bs-toggle="tab" style="color: black; cursor: pointer" onclick="document.getElementById('co_type').value='3'">펜션</a>
 						</li>
 					</ul>
 					<!-- 숙소 종류 선택 탭 -->
@@ -88,13 +85,13 @@
                             <div class="row g-2">
                                 <div class="col-md-3">
                                     <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input"
+                                        <input type="text" name='date1' class="form-control datetimepicker-input"
                                             placeholder="Check in" data-target="#date1" data-toggle="datetimepicker" />
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" placeholder="Check out" data-target="#date2" data-toggle="datetimepicker"/>
+                                        <input type="text" name='date2' class="form-control datetimepicker-input" placeholder="Check out" data-target="#date2" data-toggle="datetimepicker"/>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -111,7 +108,8 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-primary w-100">검색하기</button>
+                            <button type="submit" class="btn btn-primary w-100">검색하기</button>
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                         </div>
                     </div>
                 </div>

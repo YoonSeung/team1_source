@@ -6,7 +6,7 @@
 
 
         <!-- Room Start -->
-<form action="${pageContext.request.contextPath}/search/hotelsearch?" id="operForm" method="post" name="f">   
+	<form action="${pageContext.request.contextPath}/search/hotelsearch?" id="operForm" method="post" name="f">  
  	<div class="container-xxl py-5">
 		<div class="container">
 			<div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -17,7 +17,7 @@
 				<table class="table" style="width: 75%; margin:10px auto; margin-top: 50px;">
 					<tbody>
 						<c:forEach var="hotel" items="${hotel}">
-						<input type='hidden' id='co_type' name='co_type' value="${hotel.co_type}"/>
+						<input type='hidden' id='co_code' name='co_code' value="${hotel.co_code}"/>
 							<tr style="width: 100% height: 100%">
 								<td>
 								<div class="panel-body">			
@@ -38,7 +38,7 @@
 									</div>
 									<div class="roomlist_bottom">
 										<h4><fmt:formatNumber value="${hotel.ro_price}" pattern="#,###" />원</h4>
-										 <button type="submit" data-oper='reserve' class="btn btn-info">예약하기</button>
+										<a class="btn btn-warning" style="float:right;" href='/reserve/reserve?co_code=<c:out value="${hotel.co_code }"/>'>예약하기</a>
 										 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 									</div>
 								</td>
@@ -49,8 +49,9 @@
 			</div>
 			
 		</div>
-	</div>    
-</form>
+	</div>  
+   
+	</form>
 
 
         <!-- Room End -->
@@ -85,7 +86,7 @@ $(document).ready(function(){
 	var operForm = $("#operForm");
 	
 	$("button[data-oper='reserve']").on("click", function(e){
-		operForm.attr("action", "/views/reserve/reserve").submit();
+		operForm.attr("action", "/reserve/reserve").submit();
 	});
 });
 </script>

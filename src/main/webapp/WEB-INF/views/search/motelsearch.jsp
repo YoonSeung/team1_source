@@ -40,7 +40,7 @@
 									</div>
 									<div class="roomlist_bottom">
 										<h4><fmt:formatNumber value="${motel.ro_price}" pattern="#,###" />원</h4>
-										 <input type="submit" class="btn btn-primary" value="예약">
+										  <button type="submit" data-oper='reserve' class="btn btn-info">예약하기</button>
 										 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 									</div>
 								</td>
