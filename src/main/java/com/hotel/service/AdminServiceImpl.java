@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.hotel.domain.BookingVO;
+import com.hotel.domain.Co_infoVO;
 import com.hotel.domain.MemberVO;
 import com.hotel.mapper.AdminMapper;
 
@@ -39,5 +40,21 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public int mm_count() {
 		return adminMapper.mm_count();
+	}
+	
+	// 사업자 관리
+	@Override
+	public List<Co_infoVO> bu_list() {
+		return adminMapper.bu_list();
+	};
+	
+	@Override
+	public boolean bu_delete(int co_code) {
+		return adminMapper.bu_delete(co_code) == 1;
+	}
+	
+	@Override
+	public int bu_count() {
+		return adminMapper.bu_count();
 	}
 }

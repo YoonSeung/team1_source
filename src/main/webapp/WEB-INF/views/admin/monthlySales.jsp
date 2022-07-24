@@ -7,13 +7,13 @@
 			<div class="container-fluid px-4">
 				<h1>월별 총 매출관리</h1>
 				
-				<form action="/admin/monthlySales" method="post">
+				<form>
 					<select name="year">
 						<option value="2021">2021</option>
 						<option value="2022">2022</option>
 					</select>
 					<input type="submit" value="검색">
-<%-- 					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> --%>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 				</form>
 				
 				<div class="container">

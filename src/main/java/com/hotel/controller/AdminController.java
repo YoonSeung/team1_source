@@ -28,19 +28,19 @@ public class AdminController {
 		
 	}
 	
-	@PostMapping("/monthlySales")
-	public String monthlySales(HttpServletRequest request){
-		String year = request.getParameter("year");
-		String mon = request.getParameter("month");
-		
-		String month = year + mon;
-		
-		adminService.monthlySales(month);
-		
-		log.info(month);
-		
-		return "redirect:/admin/monthlySales";
-	}
+//	@PostMapping("/monthlySales")
+//	public String monthlySales(HttpServletRequest request){
+//		String year = request.getParameter("year");
+//		String mon = request.getParameter("month");
+//		
+//		String month = year + mon;
+//		
+//		adminService.monthlySales(month);
+//		
+//		log.info(month);
+//		
+//		return "redirect:/admin/monthlySales";
+//	}
 	
 	@GetMapping("/dailySales")
 	public void dailySales() {
@@ -69,5 +69,30 @@ public class AdminController {
 		adminService.mm_delete(mm_email);
 		
 		return "redirect:/admin/memberInfo";
+	}
+
+	// 사업자 관리
+	@GetMapping("/businessCheck")
+	public void businessCheck() {
+		
+	}
+	
+	@GetMapping("/businessInfo")
+	public void businessInfo(Model model) {
+		model.addAttribute("bu_list", adminService.bu_list());
+		model.addAttribute("bu_count", adminService.bu_count());
+	}
+	
+	@GetMapping("/bu_delete")
+	public String bu_delete(@RequestParam("co_code") int co_code, RedirectAttributes rttr) {
+		adminService.bu_delete(co_code);
+		
+		return "redirect:/admin/businessInfo";
+	}
+	
+	// 페이지 준비중
+	@GetMapping("/noPage")
+	public void noPage() {
+		
 	}
 }

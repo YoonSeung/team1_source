@@ -4524,7 +4524,7 @@ textarea.form-control-lg {
 }
 
 .navbar-yellow .navbar-brand {
-  color : #fff;
+  color : #fff !important;
 }
 .navbar-yellow svg {
   color: #fff;

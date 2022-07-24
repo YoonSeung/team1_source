@@ -79,15 +79,10 @@
                         </a>
                         <div class="collapse" id="collapseOperators" aria-labelledby="headingThree" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">사업자 가입 승인</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">숙소 관리</a>
+                                <a class="nav-link" href="businessCheck">사업자 가입 승인</a>
+                                <a class="nav-link" href="businessInfo">숙소 관리</a>
                             </nav>
                         </div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseReviews" aria-expanded="false" aria-controls="collapseReviews">
-                            <div class="sb-nav-link-icon"><i class="fas fa-pen-to-square"></i></div>
-                            후기관리
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTrip" aria-expanded="false" aria-controls="collapseTrip">
                             <div class="sb-nav-link-icon"><i class="fas fa-location-dot"></i></div>
                             추천여행지관리
@@ -95,8 +90,8 @@
                         </a>
                         <div class="collapse" id="collapseTrip" aria-labelledby="headingFive" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">추천여행지 목록</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">추천여행지 수정</a>
+                                <a class="nav-link" href="noPage">추천여행지 목록</a>
+                                <a class="nav-link" href="noPage">추천여행지 수정</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAdmins" aria-expanded="false" aria-controls="collapseAdmins">
@@ -106,8 +101,8 @@
                         </a>
                         <div class="collapse" id="collapseAdmins" aria-labelledby="headingSix" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">내정보</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">전체관리자정보</a>
+                                <a class="nav-link" href="noPage">내정보</a>
+                                <a class="nav-link" href="noPage">전체관리자정보</a>
                             </nav>
                         </div>
                     </div>
