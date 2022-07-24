@@ -65,7 +65,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                                <a href="${pageContext.request.contextPath}/hotel/hotelinfo"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/room-1.jpg" alt="">
+                                <a href="${pageContext.request.contextPath}/business/myhotel"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/room-1.jpg" alt="">
                             </a></div>
                             <div class="text-center p-4 mt-3">
                                 <h5 class="fw-bold mb-0">호텔</h5>
@@ -76,7 +76,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                                <a href="${pageContext.request.contextPath}/hotel/hotelinfo"><img class="img-fluid" src="/resources/img/room-2.jpg" alt="">
+                                <a href="${pageContext.request.contextPath}/business/myhotel"><img class="img-fluid" src="/resources/img/room-2.jpg" alt="">
                             </a></div>
                             <div class="text-center p-4 mt-3">
                                 <h5 class="fw-bold mb-0">모텔</h5>
@@ -87,7 +87,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                                <a href="${pageContext.request.contextPath}/hotel/hotelinfo"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/room-3.jpg" alt=""> 
+                                <a href="${pageContext.request.contextPath}/business/myhotel"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/room-3.jpg" alt=""> 
                             </a></div>
                             <div class="text-center p-4 mt-3">
                                 <h5 class="fw-bold mb-0">리조트</h5>
@@ -98,7 +98,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                                <a href="${pageContext.request.contextPath}/hotel/hotelinfo"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/room-3.jpg" alt="">
+                                <a href="${pageContext.request.contextPath}/business/myhotel"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/room-3.jpg" alt="">
                             </a></div>
                             <div class="text-center p-4 mt-3">
                                 <h5 class="fw-bold mb-0">펜션</h5>
@@ -122,7 +122,7 @@
                     <div class="col wow fadeInUp" data-wow-delay="0.1s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                               <a href="${pageContext.request.contextPath}/hotel/hotelinfo"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/graph2.png" alt=""></a>
+                               <a href="${pageContext.request.contextPath}/business/error"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/graph2.png" alt=""></a>
                             </div>
 
                         </div>
@@ -130,7 +130,7 @@
                     <div class="col wow fadeInUp" data-wow-delay="0.7s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                               <a href="${pageContext.request.contextPath}/hotel/hotelinfo"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/graph1.png" alt=""></a>
+                               <a href="${pageContext.request.contextPath}/business/error"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/graph1.png" alt=""></a>
                             </div>
 
                         </div>

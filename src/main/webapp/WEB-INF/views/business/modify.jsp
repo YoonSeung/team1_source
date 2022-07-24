@@ -130,7 +130,6 @@
 		<button type="submit" class="default_btn rounded mt-1" data-oper='list'>목록</button>
 		<input type="hidden" id="co_code" name="co_code" value="${modify.co_code }">
 		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-
 </form>
 </div>
 </div>
@@ -176,6 +175,8 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
 	var formObj = $("form[role='form']");
+	var csrfHeaderName = "${_csrf.headerName}";
+	var csrfTokenValue = "${_csrf.token}";
 	
 	$("button[data-oper='modify']").on("click", function(e){
 		e.preventDefault();
@@ -232,6 +233,9 @@ $(document).ready(function(){
 			url: '/uploadAjaxAction',
 			processData: false,
 			contentType: false,
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+			},
 			data: formData,
 			type:'POST',
 			dataType: 'json',
@@ -277,6 +281,9 @@ $(document).ready(function(){
 		
 		$.ajax({
 			url: '/deleteFile',
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+			},
 			data: {fileName: targetFile},
 			dataType:'text',
 			type:'POST',

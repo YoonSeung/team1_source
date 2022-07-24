@@ -4,13 +4,13 @@
 <html>
 <style type="text/css">
 .header .nav-link {
-	color : #c8c8c8 !important;
+   color : #c8c8c8 !important;
 }
 .header .nav-link:hover {
-	color : #ffc107 !important;
+   color : #ffc107 !important;
 }
 .header-image:hover {
-	opacity: 0.6;
+   opacity: 0.6;
 }
 </style>
 
@@ -78,19 +78,19 @@
                                 <p class="mb-0">+010 6681 1224</p>
                             </div>
                         </div>
-   	<div class="col-lg-5 px-5 text-end text-nowrap">
-		<nav class="header navbar navbar-expand-sm navbar-dark">
-				<div class="default_width container-fluid ">      							        
-        			<ul class="navbar-nav  justify-content-end">
+      <div class="col-lg-5 px-5 text-end text-nowrap">
+      <nav class="header navbar navbar-expand-sm navbar-dark">
+            <div class="default_width container-fluid ">                                   
+                 <ul class="navbar-nav  justify-content-end">
         <li class="nav-item">
-		<a class="nav-link" href="${pageContext.request.contextPath}/member/buInfo">사업자 정보</a>
-		</li>
-		<li class="nav-item">
-		<a class="nav-link" href="${pageContext.request.contextPath}/room/reservation">예약내역</a>
-		</li>
-		<li class="nav-item">
-	    <a class="nav-link" href="${pageContext.request.contextPath}/member/logout">로그아웃</a>
-	 </li>
+      <a class="nav-link" href="${pageContext.request.contextPath}/business/error">사업자 정보</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="${pageContext.request.contextPath}/business/booking">예약내역</a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="${pageContext.request.contextPath}/search/main">로그아웃</a>
+    </li>
         </ul>
         </div>
         </nav>
@@ -108,10 +108,10 @@
                                 <a href="main" class="nav-item nav-link" data-toggle="tab">메인</a>
                                 <a href="myhotel" class="nav-item nav-link" data-toggle="tab">숙소관리</a>
                                 <a href="booking" class="nav-item nav-link" data-toggle="tab">예약관리</a>
-                                <a href="room.html" class="nav-item nav-link">서비스</a>  
-                                <a href="contact.html" class="nav-item nav-link">매출관리</a>
-                                <a href="service.html" class="nav-item nav-link">리뷰</a>
-                                <a href="room.html" class="nav-item nav-link">고객센터</a>
+                                <a href="error" class="nav-item nav-link">서비스</a>  
+                                <a href="error" class="nav-item nav-link">매출관리</a>
+                                <a href="error" class="nav-item nav-link">리뷰</a>
+                                <a href="error" class="nav-item nav-link">고객센터</a>
                             </div>                         
                         </div>
                     </nav>

@@ -12,6 +12,10 @@ public interface BusinessService {
 
 	public List<BusinessVO>getList();
 	
+	public void busignupForm(BusinessVO vo);
+	
+	
+	
 	public int getTotal(Criteria cri);
 	
 	public List<Bo_infoVO>getBlist(Criteria cri);

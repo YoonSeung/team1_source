@@ -25,6 +25,9 @@
 						<when test="type=='X'.toString()">
 							bo_status like '%'||#{keyword}||'%'
 						</when>
+						<when test="type=='Y'.toString()">
+							co_title like '%'||#{keyword}||'%'
+						</when>
 					</choose>
 				</trim>
 			</foreach>
@@ -43,7 +46,7 @@
   from 
       (
       select /*+INDEX_DESC(bo_info pk_bo_info) */
-        rownum rn, ro_type, mm_name, checkin, checkout, bo_status, ro_max, mm_phone,bo_info.mm_email
+        rownum rn, ro_type, mm_name, checkin, checkout, bo_status, ro_max, mm_phone,bo_info.mm_email, co_title
       from 
         bo_info, co_info, mm_info
       where 
