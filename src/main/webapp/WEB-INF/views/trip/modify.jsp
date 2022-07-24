@@ -2,11 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ include file="../common/memberheader.jsp" %>
 
 <body>
 	<div id="wrap" align="center">
 		<h1>추천 여행지 수정</h1>
 		<form role="form" id="frm" name="frm" method="post" action="/trip/modify">
+		<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 			<table>
 				<tr>
 					<td>
@@ -210,3 +212,4 @@ $(document).ready(function(){
 	});
 });
 </script>
+<%@ include file="../common/memberfooter.jsp" %>

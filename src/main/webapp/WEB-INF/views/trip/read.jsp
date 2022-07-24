@@ -2,10 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-
+<%@ include file="../common/memberheader.jsp" %>
 <div id="wrap" align="center">
 	<h1>추천 여행지 소개</h1>	
 	<form role="form" id="frm" name="frm" method="post" action="/trip/read">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<table>
 		<tr>
 			<th style="text-align:center;width:60px;">명  칭</th>
@@ -49,4 +50,4 @@ $(document).ready(function(){
 	});
 });	
 </script>
-
+<%@ include file="../common/memberfooter.jsp" %>
