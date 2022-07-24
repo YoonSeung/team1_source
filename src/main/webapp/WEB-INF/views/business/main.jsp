@@ -122,7 +122,7 @@
                     <div class="col wow fadeInUp" data-wow-delay="0.1s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                               <a href="${pageContext.request.contextPath}/hotel/hotelinfo"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/graph2.png" alt=""></a>
+                               <a href="${pageContext.request.contextPath}/business/error"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/graph2.png" alt=""></a>
                             </div>
 
                         </div>
@@ -130,7 +130,7 @@
                     <div class="col wow fadeInUp" data-wow-delay="0.7s">
                         <div class="rounded shadow overflow-hidden">
                             <div class="position-relative">
-                               <a href="${pageContext.request.contextPath}/hotel/hotelinfo"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/graph1.png" alt=""></a>
+                               <a href="${pageContext.request.contextPath}/business/error"><img class="img-fluid" src="${pageContext.request.contextPath}/resources/img/graph1.png" alt=""></a>
                             </div>
 
                         </div>
