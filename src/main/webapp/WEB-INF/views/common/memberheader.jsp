@@ -125,18 +125,18 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a onclick="location.href='${pageContext.request.contextPath}/search/main'" class="nav-item nav-link">메인</a>
-                                <a onclick="location.href='${pageContext.request.contextPath}/search/about'" class="nav-item nav-link">소개</a>
-                                <a onclick="location.href='${pageContext.request.contextPath}/trip/list'" class="nav-item nav-link">서비스</a>
+                                <a href='${pageContext.request.contextPath}/search/main' class="nav-item nav-link" data-toggle="tab">메인</a>
+                               <a href='${pageContext.request.contextPath}/search/about' class="nav-item nav-link" data-toggle="tab">소개</a>
+                               <a href='${pageContext.request.contextPath}/trip/list' class="nav-item nav-link" data-toggle="tab">서비스</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">숙소카테고리</a>
                                     <div class="dropdown-menu rounded-0 m-0">
-                                        <a onclick="location.href='${pageContext.request.contextPath}/search/hotelsearch'" class="dropdown-item">호텔</a>
-                                        <a onclick="location.href='${pageContext.request.contextPath}/search/motelsearch'" class="dropdown-item">모텔</a>
-                                        <a onclick="location.href='${pageContext.request.contextPath}/search/resortsearch'" class="dropdown-item">리조트</a>
+                                        <a href='${pageContext.request.contextPath}/search/hotelsearch' class="dropdown-item">호텔</a>
+                                        <a href='${pageContext.request.contextPath}/search/motelsearch' class="dropdown-item">모텔</a>
+                                        <a href='${pageContext.request.contextPath}/search/resortsearch' class="dropdown-item">리조트</a>
                                     </div>
                                 </div>
-                                <a onclick="location.href='${pageContext.request.contextPath}/search/qna'" class="nav-item nav-link">QnA</a>
+                                <a href='${pageContext.request.contextPath}/search/qna' class="nav-item nav-link">QnA</a>
                             </div>                         
                         </div>
                     </nav>
