@@ -5,8 +5,6 @@
 <%@ include file="../common/memberheader.jsp" %>
 <div id="wrap" align="center">
 	<h1>추천 여행지 소개</h1>	
-	<form role="form" id="frm" name="frm" method="post" action="/trip/read">
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 		<table>
 		<tr>
 			<th style="text-align:center;width:60px;">명  칭</th>
@@ -36,17 +34,19 @@
 			</td>
 		</tr>
 		</table>
-	<button data-oper='list' class= "btn btn-default">목록</button>
-	<input type="hidden" id="code" name="code" value="${trip.trip_code }">
+			<form id="operForm" method="get" action="/trip/list">
+	<button data-oper='list' class= "btn btn-default" onclick="location.href='${pageContext.request.contextPath}/trip/list'">목록</button>
+	<input type="hidden" id="trip_code" name="trip_code" value="${trip.trip_code }">
 	</form>
 </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	var formObj = $("#frm");
+	var operForm = $("#operForm");
 	
 	$("button[data-oper='list']").on("click", function(e){
-		formObj.find('#code').remove();
-		formObj.attr("action", "/trip/list").submit();
+		operForm.find('#trip_code').remove();
+		operForm.attr("action", "/trip/list");
+		operForm.submit();
 	});
 });	
 </script>

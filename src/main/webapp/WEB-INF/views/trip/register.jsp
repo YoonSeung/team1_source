@@ -12,19 +12,19 @@
 		<table style="width:640px;">
 				<tr>
 					<th style="text-align:center;width:60px;">명  칭</th>
-					<td><input type="text" name="trip_name" size="60"></td>
+					<td><input type="text" name="trip_name" size="60" required="required"></td>
 				</tr>
 				<tr>
 					<th style="text-align:center;">전화번호</th>
-					<td><input type="text" name="trip_number" size="60"></td>
+					<td><input type="text" name="trip_number" size="60" ></td>
 				</tr>
 				<tr>
 					<th style="text-align:center;">주  소</th>
-					<td><input type="text" name="area_code3" size="60"></td>
+					<td><input type="text" name="area_code3" size="60" required="required"></td>
 				</tr>
 				<tr>
 					<th style="text-align:center;">내  용</th>
-					<td><input type="text" name="trip_content" size="60"></td>
+					<td><input type="text" name="trip_content" size="60" required="required"></td>
 				</tr>
 				<tr>
 					<th style="text-align:center;">사  진</th>
