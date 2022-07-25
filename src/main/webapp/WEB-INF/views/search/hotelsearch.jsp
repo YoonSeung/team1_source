@@ -33,6 +33,19 @@
 		           				<td class= "roomlist_box" style="width: 40%">
 		            				<div>
 		            					<h3>${hotel.co_title}</h3>
+		            					<h6><c:choose>
+					         <c:when test = '${hotel.ro_type=="1"}'>
+					            <h6>객실종류 : 디럭스룸</h6>
+					         </c:when>
+					
+					         <c:when test = '${hotel.ro_type== "2" }'>
+					            <h6>객실종류 : 스위트룸</h6>
+					         </c:when>
+					
+					         <c:otherwise>
+					           <h6>객실종류 : 싱글룸</h6>
+					         </c:otherwise>
+					</c:choose></h6>
 										<h6>최대인원 : ${hotel.ro_max}명</h6>
 										<h6>${hotel.ro_content}</h6>
 									</div>
