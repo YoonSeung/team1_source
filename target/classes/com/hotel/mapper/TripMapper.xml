@@ -27,7 +27,7 @@
  	
  	<update id="updateProduct">
  		update trip_info
- 			set area_code3=#{area_code3}, trip_name=#{trip_name}, trip_content=#{trip_content}, trip_number=#{trip_number}, regdate=#{regdate}, updatedate=#{updatedate}
+ 			set area_code3=#{area_code3}, trip_name=#{trip_name}, trip_content=#{trip_content}, trip_number=#{trip_number}, updatedate=sysdate
  		WHERE 
  			trip_code=#{trip_code}
  	</update>

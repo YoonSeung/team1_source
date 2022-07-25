@@ -39,10 +39,6 @@
 	</select>
 	
 	<delete id="mm_delete">
-		delete from bo_info where mm_email=#{mm_email}
-		delete from pay_info where mm_email=#{mm_email}
-		delete from coupon where mm_email=#{mm_email}
-		delete from wishlist where mm_email=#{mm_email}
 		delete from mm_info where mm_email=#{mm_email}
 	</delete>
 	
