@@ -41,7 +41,7 @@
 		<br>
 		<button type="submit" class="btn btn-default">확인</button>
 		<button type="reset" class="btn btn-default">취소</button>
-		<button type="submit" class="btn btn-default" data-oper='list'>목록</button>
+		<button type="button" class="btn btn-default" data-oper='list' onclick="location.href='${pageContext.request.contextPath}/trip/list'">목록</button>
 	</form>
 </div>
 
@@ -164,5 +164,4 @@
 		});	
 	});
 </script>
-
 <%@include file="../common/memberfooter.jsp" %>
