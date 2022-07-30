@@ -6,7 +6,7 @@ Java와 Spring MVC를 기반으로 제작한 프로젝트이다.
 
 프로젝트 제작 기간 : 2022.06.21 ~ 2022.07.26
 
-# ⛏ 프로젝트 구성 및 설계(https://github.com/YoonSeung/team1/tree/master/%EA%B8%B0%ED%9A%8D%EB%AC%B8%EC%84%9C/0.%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B8%B0%ED%9A%8D%EC%95%88)
+# [⛏ 프로젝트 구성 및 설계](https://github.com/YoonSeung/team1/tree/master/%EA%B8%B0%ED%9A%8D%EB%AC%B8%EC%84%9C/0.%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EA%B8%B0%ED%9A%8D%EC%95%88)
 
 
 ### ⛏process 
