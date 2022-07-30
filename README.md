@@ -11,7 +11,7 @@ Java와 Spring MVC를 기반으로 제작한 프로젝트이다.
 
 ### ⛏process 
 
-
+-- [프로세스 정의](https://github.com/YoonSeung/team1/tree/master/%EA%B8%B0%ED%9A%8D%EB%AC%B8%EC%84%9C/1.%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%A0%95%EC%9D%98%EC%84%9C)
 
 ### ⛏Database ERD
 
