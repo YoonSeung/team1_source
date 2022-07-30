@@ -14,7 +14,7 @@ Java와 Spring MVC를 기반으로 제작한 프로젝트이다.
 - [프로세스 정의](https://github.com/YoonSeung/team1/tree/master/%EA%B8%B0%ED%9A%8D%EB%AC%B8%EC%84%9C/1.%20%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4%EC%A0%95%EC%9D%98%EC%84%9C)
 
 ### ⛏Database ERD
-
+![호텔예약관리](https://user-images.githubusercontent.com/46475661/181933892-eb54da1c-513c-47c5-8cf6-ca2c46f98f75.png)
  
 
 ### ⛏사용 기술
